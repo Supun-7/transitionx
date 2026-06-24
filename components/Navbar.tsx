@@ -8,7 +8,6 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     return (
     <header className="nav">
-        {/* =================== NAVBAR=================== */}
         <div className="container nav-inner">
             <Link className="brand" href="/">
             <Image src="/logo.png" alt="TransitionX Logo" width={100} height={50} />

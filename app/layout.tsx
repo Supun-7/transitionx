@@ -1,5 +1,6 @@
 
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 import { Rajdhani } from "next/font/google"
 
 const rajdhani = Rajdhani({weight: ["500" , "600" , "700"],subsets:["latin"]})
@@ -14,9 +15,10 @@ export default function Rootlayout({children}: {children: React.ReactNode}) {
   return(
     <html lang="en">
       <body className={`${rajdhani.className}`}>
+      <div className="bg-grid" />
       <Navbar/>
       {children}
-      <div className="bg-grid" />
+      <Footer/>
       </body>
     </html>
   )

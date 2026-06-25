@@ -46,10 +46,6 @@ export default function Home() {
             </Link>
             <Link className="btn btn-ghost" href="/dates">See key dates</Link>
           </div>
-          <div className="hero-org org-line">
-            <span><span className="dot"></span>IEEE Student Branch of SLIIT</span>
-            <span><span className="dot"></span>IEEE Student Branch of Curtin University Colombo</span>
-          </div>
         </div>
       </section>
 

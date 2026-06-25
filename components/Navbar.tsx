@@ -10,7 +10,7 @@ export default function Navbar() {
     <header className="nav">
         <div className="container nav-inner">
             <Link className="brand" href="/">
-            <Image src="/logo.png" alt="TransitionX Logo" width={220} height={200} />
+            <Image src="/logo.png" alt="TransitionX Logo" width={130} height={60} />
             </Link>
             <button className={`nav-toggle ${isOpen ? 'open' : ''}`} aria-label="Menu" aria-expanded={isOpen ? "true" : "false"} onClick={() => setIsOpen(!isOpen)}>
             <span></span><span></span><span></span>

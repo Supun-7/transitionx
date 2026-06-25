@@ -5,7 +5,7 @@ import HeroScene from "../components/HeroScene"
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ paddingTop: '80px' }}>
       <section className="hero-stage">
 
         <HeroScene />

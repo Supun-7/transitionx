@@ -130,11 +130,12 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
   z-index: 100; width: calc(100% - 48px); max-width: 1100px;
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
-  background: #c98cd32e;
-  border: 1px solid #c98cd300;
+  background: rgba(20, 16, 28, 0.55);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 999px;
-  transition: background .3s, box-shadow .5s;
+  transition: background .3s, box-shadow .3s;
 }
+
 .nav.scrolled {
   background: rgba(12, 10, 18, 0.80);
   box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(202,140,211,0.12);
@@ -167,7 +168,19 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
 
 /* mobile nav dropdown */
 @media (max-width: 720px) {
-  .nav { border-radius: 20px; top: 12px; width: calc(100% - 24px); }
+  .nav { 
+    border-radius: 20px; 
+    top: 12px; 
+    width: calc(100% - 24px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav-inner {
+    padding: 0 16px;
+    justify-content: space-between;
+    width: 100%;
+}
+
   .nav-toggle { display: block; }
   .nav-links {
     position: absolute; top: calc(100% + 8px); left: 0; right: 0;

@@ -1,70 +1,78 @@
 <div align="center">
 
-<br />
+<img src="public/logo.png" alt="TransitionX Logo" width="180"/>
 
-<img src="public/logo.png" alt="TransitionX Logo" width="200"/>
+# ⚡ TransitionX 2026 — Web Platform
 
-<br />
-<br />
+**The official web platform for TransitionX 2026 — built with Next.js**
 
-# TRANSITIONX 2026
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![CSS3](https://img.shields.io/badge/CSS3-Custom%20Design%20System-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-Custom%20Design%20System-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-  <img src="https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Live-brightgreen?style=flat-square" />
-  <img src="https://img.shields.io/badge/Branch-main%20%7C%20dev-blueviolet?style=flat-square" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" />
-</p>
-
-<br />
-
-**🌐 [transitionx.vercel.app](https://transitionx.vercel.app)**
+[🌐 Live Site](https://transitionx.vercel.app) • [🐛 Report Bug](../../issues) • [💡 Request Feature](../../issues)
 
 </div>
 
 ---
 
-## 📦 Tech Stack
+## 📌 Overview
 
-| Layer | Technology |
-|-------|-----------|
-| **Framework** | Next.js 15 — App Router |
-| **Language** | TypeScript |
-| **Styling** | Pure CSS — Custom Design System (no Tailwind) |
-| **Animations** | CSS Keyframes + Canvas API |
-| **Font** | Rajdhani via `next/font/google` |
-| **Deployment** | Vercel — auto deploy from `main` |
-| **Version Control** | Git + GitHub |
+TransitionX 2026 web platform — a modern, animated, fully responsive multi-page website built with **Next.js 15 App Router** and **TypeScript**. Zero UI libraries, zero Tailwind — pure custom CSS design system with glassmorphism, CSS 3D animations, and a Canvas particle network hero.
 
 ---
 
-## 🗂 Project Structure
+## ✨ Features
 
-```bash
+| Feature | Description |
+|---------|-------------|
+| 🎬 **Hero Animation** | CSS 3D geometric shape + Canvas API particle network |
+| 🧭 **Floating Navbar** | Glassmorphism pill navbar — fixed, blurred, fully responsive |
+| 📱 **Mobile Responsive** | Animated hamburger menu, mobile-first layout |
+| ✨ **Scroll Reveal** | `IntersectionObserver` powered reveal on every page |
+| 🌊 **Shine Wordmark** | Wave shine animation on footer text |
+| ⚡ **Zero Dependencies** | No animation libraries — pure CSS + Canvas API |
+| ♿ **Accessible** | ARIA labels, `focus-visible` outlines, `prefers-reduced-motion` support |
+| 🔠 **Optimized Font** | Rajdhani via `next/font/google` — no layout shift |
+
+---
+
+## 🛠️ Tech Stack
+
+```
+Framework     →  Next.js 15 (App Router)
+Language      →  TypeScript
+Styling       →  Pure CSS — Custom Design System (no Tailwind)
+Animations    →  CSS Keyframes + Canvas API
+Font          →  Rajdhani (next/font/google)
+Deployment    →  Vercel (auto-deploy from main)
+Version Ctrl  →  Git + GitHub
+```
+
+---
+
+## 📁 Project Structure
+
+```
 transitionx/
 │
 ├── 📁 app/
 │   ├── layout.tsx              # Root layout — Navbar, Footer, Font, Global CSS
-│   ├── page.tsx                # / — Home
+│   ├── globals.css             # ← All styles live here
+│   ├── page.tsx                # / Home
 │   ├── about/page.tsx          # /about
 │   ├── process/page.tsx        # /process
 │   ├── impact/page.tsx         # /impact
 │   ├── dates/page.tsx          # /dates
 │   ├── contact/page.tsx        # /contact
-│   ├── register/page.tsx       # /register
-│   └── globals.css             # ← All styles live here
+│   └── register/page.tsx       # /register
 │
 ├── 📁 components/
 │   ├── Navbar.tsx              # Floating glassmorphism navbar
 │   ├── Footer.tsx              # Footer with shine wordmark animation
-│   └── HeroScene.tsx           # Canvas particle network (hero bg)
+│   └── HeroScene.tsx           # Canvas particle network background
 │
 ├── 📁 hooks/
 │   └── useReveal.ts            # Custom scroll reveal hook
@@ -81,32 +89,32 @@ transitionx/
 
 ```bash
 node -v   # v18 or higher required
-npm -v    # comes with Node
+npm -v    # comes with Node.js
 ```
 
-### Local Development
+### Installation
 
 ```bash
 # 1 — Clone the repository
 git clone https://github.com/YOUR_USERNAME/transitionx.git
 
-# 2 — Enter the project directory
+# 2 — Move into the project
 cd transitionx
 
 # 3 — Install dependencies
 npm install
 
-# 4 — Start the development server
+# 4 — Start dev server
 npm run dev
 ```
 
-> Open [http://localhost:3000](http://localhost:3000) in your browser
+> App runs at **[http://localhost:3000](http://localhost:3000)**
 
 ### Production Build
 
 ```bash
-npm run build    # build for production
-npm start        # run production build locally
+npm run build     # build for production
+npm start         # preview production build locally
 ```
 
 ---
@@ -114,31 +122,42 @@ npm start        # run production build locally
 ## 🌿 Branch Strategy
 
 ```
-main ──────────────────────────────► Vercel (auto-deploy)
-  └── dev ──► active development
+main ─────────────────────────────► Vercel (auto-deploys on every push)
+  └── dev ──► all active development happens here
 ```
 
 | Branch | Purpose |
 |--------|---------|
-| `main` | Production — connected to Vercel, every push auto-deploys |
-| `dev` | Development — all work happens here |
+| `main` | Production — connected to Vercel, pushes auto-deploy |
+| `dev` | Development — all changes go here first |
 
-### Workflow
+### Git Workflow
 
 ```bash
-# Step 1 — always work on dev
+# Always work on dev
 git checkout dev
 
-# Step 2 — make changes, then stage and commit
+# Make your changes, commit and push
 git add .
-git commit -m "feat: your change here"
+git commit -m "feat: your change"
 git push origin dev
 
-# Step 3 — when ready to go live, merge into main
+# When ready to go live — merge into main
 git checkout main
 git merge dev
 git push origin main
-# ↑ Vercel picks this up and deploys automatically
+# ↑ Vercel detects the push and deploys automatically
+```
+
+---
+
+## 📜 Available Scripts
+
+```bash
+npm run dev       # Start development server (localhost:3000)
+npm run build     # Build for production
+npm start         # Run production build locally
+npm run lint      # Run ESLint
 ```
 
 ---
@@ -146,12 +165,12 @@ git push origin main
 ## 🧠 Developer Notes
 
 ```
-📌  All CSS           →  app/globals.css only — no component-level styles
-📌  useReveal hook    →  must be called on every page that uses .reveal class
-📌  'use client'      →  required on any page using useState / useEffect / onClick
-📌  Logo              →  public/logo.png — swap file to update branding site-wide
-📌  Google Form link  →  app/register/page.tsx — search GOOGLE_FORM_LINK_HERE
-📌  Navbar scroll     →  scrolled class toggled via JS — handled in Navbar.tsx
+📌  All CSS            →  app/globals.css only — no component-level styles
+📌  useReveal hook     →  must be called on every page using the .reveal CSS class
+📌  'use client'       →  required on pages using useState / useEffect / onClick
+📌  Logo               →  public/logo.png — swap file to update branding site-wide
+📌  Google Form link   →  app/register/page.tsx — find GOOGLE_FORM_LINK_HERE
+📌  Scroll effect      →  .scrolled class toggled on navbar via scroll event listener
 ```
 
 ---
@@ -169,8 +188,10 @@ git push origin main
 
 ---
 
-<div align="center">
+## 🌐 Deployment
 
-Made with 💜 · TransitionX Tech Team · 2026
+Deployed on **Vercel** — connected to the `main` branch.
 
-</div>
+Every push to `main` triggers an automatic production deployment.
+
+> ⚠️ Never push unfinished work directly to `main` — always use `dev` first.

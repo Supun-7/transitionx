@@ -1,36 +1,197 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+<img src="public/logo.png" alt="TransitionX Logo" width="180"/>
 
-First, run the development server:
+# ⚡ TransitionX 2026 — Web Platform
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**The official web platform for TransitionX 2026 — built with Next.js**
+
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![CSS3](https://img.shields.io/badge/CSS3-Custom%20Design%20System-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+
+[🌐 Live Site](https://transitionx.vercel.app) • [🐛 Report Bug](../../issues) • [💡 Request Feature](../../issues)
+
+</div>
+
+---
+
+## 📌 Overview
+
+TransitionX 2026 web platform — a modern, animated, fully responsive multi-page website built with **Next.js 15 App Router** and **TypeScript**. Zero UI libraries, zero Tailwind — pure custom CSS design system with glassmorphism, CSS 3D animations, and a Canvas particle network hero.
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🎬 **Hero Animation** | CSS 3D geometric shape + Canvas API particle network |
+| 🧭 **Floating Navbar** | Glassmorphism pill navbar — fixed, blurred, fully responsive |
+| 📱 **Mobile Responsive** | Animated hamburger menu, mobile-first layout |
+| ✨ **Scroll Reveal** | `IntersectionObserver` powered reveal on every page |
+| 🌊 **Shine Wordmark** | Wave shine animation on footer text |
+| ⚡ **Zero Dependencies** | No animation libraries — pure CSS + Canvas API |
+| ♿ **Accessible** | ARIA labels, `focus-visible` outlines, `prefers-reduced-motion` support |
+| 🔠 **Optimized Font** | Rajdhani via `next/font/google` — no layout shift |
+
+---
+
+## 🛠️ Tech Stack
+
+```
+Framework     →  Next.js 15 (App Router)
+Language      →  TypeScript
+Styling       →  Pure CSS — Custom Design System (no Tailwind)
+Animations    →  CSS Keyframes + Canvas API
+Font          →  Rajdhani (next/font/google)
+Deployment    →  Vercel (auto-deploy from main)
+Version Ctrl  →  Git + GitHub
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+transitionx/
+│
+├── 📁 app/
+│   ├── layout.tsx              # Root layout — Navbar, Footer, Font, Global CSS
+│   ├── globals.css             # ← All styles live here
+│   ├── page.tsx                # / Home
+│   ├── about/page.tsx          # /about
+│   ├── process/page.tsx        # /process
+│   ├── impact/page.tsx         # /impact
+│   ├── dates/page.tsx          # /dates
+│   ├── contact/page.tsx        # /contact
+│   └── register/page.tsx       # /register
+│
+├── 📁 components/
+│   ├── Navbar.tsx              # Floating glassmorphism navbar
+│   ├── Footer.tsx              # Footer with shine wordmark animation
+│   └── HeroScene.tsx           # Canvas particle network background
+│
+├── 📁 hooks/
+│   └── useReveal.ts            # Custom scroll reveal hook
+│
+└── 📁 public/
+    └── logo.png                # Brand logo
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerequisites
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+node -v   # v18 or higher required
+npm -v    # comes with Node.js
+```
 
-## Deploy on Vercel
+### Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# 1 — Clone the repository
+git clone https://github.com/YOUR_USERNAME/transitionx.git
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 2 — Move into the project
+cd transitionx
+
+# 3 — Install dependencies
+npm install
+
+# 4 — Start dev server
+npm run dev
+```
+
+> App runs at **[http://localhost:3000](http://localhost:3000)**
+
+### Production Build
+
+```bash
+npm run build     # build for production
+npm start         # preview production build locally
+```
+
+---
+
+## 🌿 Branch Strategy
+
+```
+main ─────────────────────────────► Vercel (auto-deploys on every push)
+  └── dev ──► all active development happens here
+```
+
+| Branch | Purpose |
+|--------|---------|
+| `main` | Production — connected to Vercel, pushes auto-deploy |
+| `dev` | Development — all changes go here first |
+
+### Git Workflow
+
+```bash
+# Always work on dev
+git checkout dev
+
+# Make your changes, commit and push
+git add .
+git commit -m "feat: your change"
+git push origin dev
+
+# When ready to go live — merge into main
+git checkout main
+git merge dev
+git push origin main
+# ↑ Vercel detects the push and deploys automatically
+```
+
+---
+
+## 📜 Available Scripts
+
+```bash
+npm run dev       # Start development server (localhost:3000)
+npm run build     # Build for production
+npm start         # Run production build locally
+npm run lint      # Run ESLint
+```
+
+---
+
+## 🧠 Developer Notes
+
+```
+📌  All CSS            →  app/globals.css only — no component-level styles
+📌  useReveal hook     →  must be called on every page using the .reveal CSS class
+📌  'use client'       →  required on pages using useState / useEffect / onClick
+📌  Logo               →  public/logo.png — swap file to update branding site-wide
+📌  Google Form link   →  app/register/page.tsx — find GOOGLE_FORM_LINK_HERE
+📌  Scroll effect      →  .scrolled class toggled on navbar via scroll event listener
+```
+
+---
+
+## 🎨 Design Tokens
+
+```css
+--purple:     #3b0764    /* Vibranium Purple   */
+--lavender:   #ca8cd3    /* Royal Glow         */
+--x-cyan:     #22d3ee    /* Accent Cyan        */
+--x-magenta:  #e056c1    /* Accent Magenta     */
+--bg-0:       #0c0a12    /* Deep Background    */
+--bg-1:       #14101c    /* Surface Background */
+```
+
+---
+
+## 🌐 Deployment
+
+Deployed on **Vercel** — connected to the `main` branch.
+
+Every push to `main` triggers an automatic production deployment.
+
+> ⚠️ Never push unfinished work directly to `main` — always use `dev` first.

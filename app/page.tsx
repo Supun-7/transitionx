@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import HeroScene from "../components/HeroScene"
 
 export default function Home() {
@@ -31,9 +32,27 @@ export default function Home() {
         <div className="spotlight spotlight-left" />
         <div className="spotlight spotlight-right" />
         <div className="hero-content">
-          <p className="hero-eyebrow eyebrow">SLIIT &amp; Curtin University Colombo IEEE · 2026</p>
+          <div className="hero-logos-container hero-eyebrow">
+            <Image
+              src="/sliitlogo.png"
+              alt="SLIIT Logo"
+              width={190}
+              height={28}
+              className="hero-logo-img"
+              priority
+            />
+            <span className="logo-divider"></span>
+            <Image
+              src="/curtin logo.png"
+              alt="Curtin University Colombo Logo"
+              width={204}
+              height={28}
+              className="hero-logo-img"
+              priority
+            />
+          </div>
           <h1 className="hero-tagline">
-            Your <span className="idea">IDEA.</span>
+            Real <span className="idea">Industry Challenges.</span>
             <span className="stage">We set the STAGE.</span>
           </h1>
           <p className="hero-lead lead">
@@ -71,16 +90,16 @@ export default function Home() {
               <div className="label">Structured Phases</div>
             </div>
             <div className="stat">
-              <div className="num">10+</div>
+              <div className="num">20+</div>
               <div className="label">Partner Companies</div>
             </div>
             <div className="stat">
-              <div className="num">200+</div>
+              <div className="num">75+</div>
               <div className="label">Students Impacted</div>
             </div>
             <div className="stat">
-              <div className="num">2</div>
-              <div className="label">IEEE Student Branches</div>
+              <div className="num">5</div>
+              <div className="label">Core Technical Domains</div>
             </div>
           </div>
         </div>

@@ -454,6 +454,35 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
   color: rgba(255,255,255,0.3); font-weight: 600;
   margin-top: 10px; font-size: .85rem;
 }
+.footer-logos-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 20px;
+  border-radius: 999px;
+}
+
+.footer-logo-img {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.65;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s ease;
+}
+
+.footer-logos-container:hover .footer-logo-img {
+  opacity: 0.95;
+}
+
+.footer-logo-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.12);
+}
 .footer-links { display: flex; gap: 56px; flex-wrap: wrap; }
 .footer-links h4 {
   font-size: .72rem; letter-spacing: 3px; text-transform: uppercase;
@@ -692,6 +721,38 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
   animation-delay: 1.9s;
 }
 
+.hero-logos-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 24px;
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 8px;
+}
+
+.hero-logo-img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s ease;
+}
+
+.hero-logos-container:hover .hero-logo-img {
+  opacity: 1;
+}
+
+.logo-divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
 /* lead */
 .hero-lead {
   opacity: 0;
@@ -728,4 +789,25 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
   .geo-face:nth-child(4) { transform: rotateY(180deg) translateZ(140px); }
   .geo-face:nth-child(5) { transform: rotateY(240deg) translateZ(140px); }
   .geo-face:nth-child(6) { transform: rotateY(300deg) translateZ(140px); }
+}
+
+.about-logo-wrapper {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.about-card-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .about-card-logo {
+  opacity: 1;
 }

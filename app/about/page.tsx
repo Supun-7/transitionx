@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link"
+import Image from "next/image"
 import useReveal from "../../hooks/useReveal"
 
 export default function About() {
@@ -59,15 +60,28 @@ export default function About() {
           </div>
           <div className="grid grid-2">
             <div className="card reveal d1" style={{ textAlign: 'center' }}>
-              <div className="icon" style={{ margin: '0 auto 18px', fontSize: '1.6rem' }}>🎓</div>
-              <h3>IEEE Student Branch</h3>
-              <p className="accent-text" style={{ fontSize: '1.1rem', fontWeight: 700, margin: '8px 0' }}>SLIIT</p>
-              <p>Sri Lanka Institute of Information Technology — one of Sri Lanka's leading technology universities, driving innovation through student-led initiatives.</p>
+              <div className="about-logo-wrapper">
+                <Image
+                  src="/sliitlogo.png"
+                  alt="SLIIT Logo"
+                  width={271}
+                  height={40}
+                  className="about-card-logo"
+                />
+              </div>
+               <p>Sri Lanka Institute of Information Technology — one of Sri Lanka's leading technology universities, driving innovation through student-led initiatives.</p>
             </div>
             <div className="card reveal d2" style={{ textAlign: 'center' }}>
-              <div className="icon" style={{ margin: '0 auto 18px', fontSize: '1.6rem' }}>🌏</div>
-              <h3>IEEE Student Branch</h3>
-              <p className="accent-text" style={{ fontSize: '1.1rem', fontWeight: 700, margin: '8px 0' }}>Curtin University Colombo</p>
+              <div className="about-logo-wrapper">
+                <Image
+                  src="/curtin logo.png"
+                  alt="Curtin University Colombo Logo"
+                  width={292}
+                  height={40}
+                  className="about-card-logo"
+                />
+              </div>
+              
               <p>The Colombo campus of Curtin University Australia — bringing global academic standards and industry connections to Sri Lanka's engineering community.</p>
             </div>
           </div>

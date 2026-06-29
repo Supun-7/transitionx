@@ -30,7 +30,7 @@ export default function Process() {
               {[
                 { num: '01', name: 'Company Engagement', desc: 'Industry meets campus' },
                 { num: '02', name: 'Skill Accelerator', desc: 'Targeted workshops' },
-                { num: '03', name: 'Mentorship Track', desc: 'Guided by experts' },
+                { num: '03', name: 'Solution Refinement', desc: 'Guided by experts' },
                 { num: '04', name: 'Industry Buildathon', desc: 'The final showcase' },
               ].map((p, i) => (
                 <div className="rail-node" key={i}>
@@ -86,13 +86,13 @@ export default function Process() {
           <div className="phase card reveal d3" style={{ marginBottom: '28px' }}>
             <div className="phase-main">
               <span className="phase-tag">PHASE 03</span>
-              <h3>Mentorship Track</h3>
+              <h3>Solution Refinement</h3>
               <p className="phase-sub">Guided by those who&apos;ve walked the path</p>
               <ul>
-                <li>Each team is paired with an industry professional mentor</li>
-                <li>Regular mentorship sessions to guide solution development</li>
+                <li>Teams work independently to engineer their initial problem proposals</li>
+                <li>Proposals are submitted directly to company partners for professional review</li>
                 <li>Feedback loops between students, mentors and company partners</li>
-                <li>Professional development coaching alongside technical guidance</li>
+                <li>Access to optional mentorship or deeper collaboration</li>
               </ul>
             </div>
             <div className="outcome card">

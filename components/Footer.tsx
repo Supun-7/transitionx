@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -14,6 +15,23 @@ export default function Footer() {
           <div>
             <p className="f-tagline">Bridging academia and industry, one engineer at a time.</p>
             <p className="f-orgs">IEEE Student Branches of SLIIT &amp; Curtin University Colombo</p>
+            <div className="footer-logos-container">
+              <Image
+                src="/sliitlogo.png"
+                alt="SLIIT Logo"
+                width={163}
+                height={24}
+                className="footer-logo-img"
+              />
+              <span className="footer-logo-divider"></span>
+              <Image
+                src="/curtin logo.png"
+                alt="Curtin University Colombo Logo"
+                width={175}
+                height={24}
+                className="footer-logo-img"
+              />
+            </div>
           </div>
 
           <div className="footer-links">

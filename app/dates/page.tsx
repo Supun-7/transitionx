@@ -30,9 +30,13 @@ export default function Dates() {
             {[
               { date: '29th June 2026', title: 'Applications Open', desc: 'Registration opens for final-year engineering students from SLIIT and Curtin University Colombo.' },
               { date: '06th July 2026', title: 'Applications Close', desc: 'Last day to submit your registration. Selected participants will be notified within one week.' },
-              { date: '15th July 2026', title: 'Phase 01 — Company Engagement', desc: 'Industry partners present their real-world challenges. Teams are formed and problem statements distributed.' },
-              { date: '18th July 2026', title: 'Phase 02 — Skill Accelerator', desc: 'Targeted workshops and hands-on training sessions begin. Expert-led sessions run across four weeks.' },
-              { date: '21st August 2026', title: 'Phase 03 — Mentorship Track', desc: 'Teams are paired with industry mentors. Weekly mentorship sessions and feedback loops begin.' },
+              { date: '15th July 2026', title: 'Informative Webinar', desc: 'Join our online session to uncover the competition structure, review event guidelines, and get a preview of the industry challenge categories.' },
+              { date: '18th July 2026', title: 'Company Meetup', desc: 'Meet your industry partners face-to-face. Companies will present their real-world challenges, allowing your team to ask questions and clarify constraints before development begins.' },
+              { date: 'Late July (Ongoing)', title: 'Support Sessions', desc: 'Level up your capabilities. Participate in targeted workshops and hands-on training designed to equip you with the practical skills needed to tackle your specific industry problem.' },
+              { date: '1st August 2026', title: 'Progress Checkpoint', desc: "Submit your team's formal problem proposal. This document will outline your technical understanding of the challenge and the solution architecture you plan to build." },
+              { date: '1st – 18th August 2026', title: 'Company Feedback & Refinement', desc: 'Industry partners will review your checkpoint proposals. Use their professional, constructive feedback to refine your approach, pivot if necessary, and perfect your final deliverable.' },
+              { date: 'Prior to the Finale', title: 'Solution Submission', desc: 'Lock in your hard work. Finalize and submit your technical research, code, simulations, or working prototypes for the judges to evaluate.' },
+              { date: '22nd August 2026', title: 'Grand Finale Judgement Day', desc: 'The ultimate test of transition. Step onto the stage to pitch your final solutions and run live demonstrations directly for the industry partner panels.' },
             ].map((item, i) => (
               <div className="tl-item card reveal" key={i}>
                 <div className="tl-date">{item.date}</div>

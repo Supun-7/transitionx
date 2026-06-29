@@ -7,8 +7,10 @@ const rajdhani = Rajdhani({weight: ["500" , "600" , "700"],subsets:["latin"]})
 
 export const metadata = {
   title: "TransitionX 2026",
-  description: "Your IDEA. We set the STAGE"
-
+  description: "Your IDEA. We set the STAGE",
+  icons: {
+    icon: "/icon.png",
+  },
 }
 
 export default function Rootlayout({children}: {children: React.ReactNode}) {

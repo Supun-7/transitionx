@@ -57,7 +57,7 @@ export default function Home() {
           </h1>
           <p className="hero-lead lead">
             A flagship initiative by the IEEE Student Branches of SLIIT and Curtin University Colombo,
-            built to help graduating students turn academic knowledge into real, hands-on industry experience.
+            built to help 3rd/4th-year students and fresh graduates turn academic knowledge into real, hands-on industry experience.
           </p>
           <div className="hero-cta-wrap hero-cta">
             <Link className="btn btn-primary" href="/process">
@@ -76,25 +76,22 @@ export default function Home() {
             <h2>Bridging the Gap Between Academia &amp; Industry</h2>
             <div className="title-rule"></div>
             <p className="lead" style={{ marginTop: '20px' }}>
-              TransitionX is a structured industry transition programme designed for final-year
-              engineering students. It connects graduating talent with real company challenges
-              through workshops, mentorship, and a final Industry Buildathon — creating engineers
-              who are truly industry-ready from day one.
+              TransitionX is a structured industry transition programme designed for 3rd/4th-year students and fresh graduates. It connects graduating talent with real company challenges through workshops, mentorship, and a final Industry Buildathon — creating engineers who are truly industry-ready from day one.
             </p>
           </div>
 
           {/* Stats */}
           <div className="stats reveal d1">
             <div className="stat">
-              <div className="num">4</div>
+              <div className="num">3</div>
               <div className="label">Structured Phases</div>
             </div>
             <div className="stat">
-              <div className="num">20+</div>
+              <div className="num">25</div>
               <div className="label">Partner Companies</div>
             </div>
             <div className="stat">
-              <div className="num">75+</div>
+              <div className="num">75</div>
               <div className="label">Students Impacted</div>
             </div>
             <div className="stat">
@@ -133,33 +130,123 @@ export default function Home() {
                 </svg>
               </div>
               <h3>Mission</h3>
-              <p>To deliver a structured, immersive programme that equips final-year students with real industry exposure, professional mentorship, and hands-on problem-solving experience.</p>
+              <p>To deliver a structured, immersive programme that equips 3rd/4th-year students and fresh graduates with real industry exposure, professional mentorship, and hands-on problem-solving experience.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== THE 4 PILLARS ===== */}
+      {/* ===== TECHNICAL DOMAINS & CORE PILLARS ===== */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="grid grid-2 reveal" style={{ alignItems: 'center', gap: '48px' }}>
+            <div>
+              <span className="eyebrow">Technical Domains &amp; Core Pillars</span>
+              <h2 style={{ marginBottom: '20px' }}>Empowering Innovation</h2>
+              <div className="title-rule" style={{ marginBottom: '24px' }}></div>
+              <p className="lead" style={{ marginBottom: '24px' }}>
+                Transition-X brings together industry and academia by addressing real-world challenges across five key technology and engineering domains. The competition encourages innovation, interdisciplinary collaboration, and practical problem-solving through industry-driven projects.
+              </p>
+              
+            </div>
+            
+            <div className="card" style={{ padding: '36px' }}>
+              <h3 style={{ fontSize: '1.4rem', marginBottom: '24px', color: 'var(--lavender)' }}>Core Competition Domains</h3>
+              <ul style={{ listStyle: 'none', display: 'grid', gap: '20px' }}>
+                {[
+                  { icon: '💻', text: 'Digital Systems & Software' },
+                  { icon: '🤖', text: 'AI, Data & Cyber Technologies' },
+                  { icon: '🔌', text: 'Robotics & Embedded Systems' },
+                  { icon: '🏭', text: 'Smart Manufacturing & Industrial Automation' },
+                  { icon: '🏗️', text: 'Civil Engineering & Smart Infrastructure' }
+                ].map((dom, idx) => (
+                  <li key={idx} style={{ display: 'flex', gap: '16px', alignItems: 'center', fontSize: '1.15rem', fontWeight: 600 }}>
+                    <span style={{ fontSize: '1.6rem' }}>{dom.icon}</span>
+                    <span>{dom.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SOCIAL & COMMUNITY ===== */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head center reveal">
-            <span className="eyebrow">Why TransitionX</span>
-            <h2>The Four Pillars</h2>
+            <span className="eyebrow">Stay Connected</span>
+            <h2>Join Our Community</h2>
             <div className="title-rule"></div>
+            <p className="lead" style={{ marginTop: '20px', maxWidth: '600px', margin: '20px auto 0' }}>
+              Follow our official social media channels for direct announcements, behind-the-scenes content, and real-time updates.
+            </p>
           </div>
-          <div className="grid grid-4">
-            {[
-              { icon: '🏢', title: 'Company Engagement', desc: 'Real challenges from real companies. Students work on live industry problems, not textbook exercises.' },
-              { icon: '🧠', title: 'Expert Mentorship', desc: 'Guided by industry professionals who have navigated the exact transition students are about to make.' },
-              { icon: '⚡', title: 'Skill Accelerator', desc: 'Targeted workshops that close the gap between academic knowledge and professional expectations.' },
-              { icon: '🏆', title: 'Industry Buildathon', desc: 'A final showcase where teams present real solutions to industry partners — the ultimate test.' },
-            ].map((p, i) => (
-              <div className={`card reveal d${i + 1}`} key={i}>
-                <div className="icon" style={{ fontSize: '1.4rem' }}>{p.icon}</div>
-                <h3>{p.title}</h3>
-                <p>{p.desc}</p>
-              </div>
-            ))}
+          
+          <div className="grid grid-2" style={{ maxWidth: '720px', margin: '0 auto', gap: '20px' }}>
+            <div className="card reveal d1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
+              <a 
+                href="https://instagram.com/transitionx.official" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
+                className="hover-scale"
+              >
+                <div style={{ position: 'relative', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', overflow: 'hidden' }}>
+                  <Image
+                    src="/logo-computer-icons-clip-art-instagram-logo.jpg"
+                    alt="Instagram Logo"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              </a>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>Instagram</h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
+                Follow us on Instagram for live stories, highlights, and participant spotlights.
+              </p>
+              <a 
+                href="https://instagram.com/transitionx.official" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-ghost"
+                style={{ fontSize: '0.95rem', padding: '10px 24px' }}
+              >
+                @transitionx.official
+              </a>
+            </div>
+
+            <div className="card reveal d2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
+              <a 
+                href="https://whatsapp.com/channel/0029VbCw8fD5fM5dbMtn8S19" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
+                className="hover-scale"
+              >
+                <div style={{ position: 'relative', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', overflow: 'hidden' }}>
+                  <Image
+                    src="/whatsapp-vector-logo-icon-logotype-vector-social-media_901408-406.avif"
+                    alt="WhatsApp Logo"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              </a>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>WhatsApp Channel</h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
+                Join our official WhatsApp channel for direct alerts, schedule announcements, and links.
+              </p>
+              <a 
+                href="https://whatsapp.com/channel/0029VbCw8fD5fM5dbMtn8S19" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary"
+                style={{ fontSize: '0.95rem', padding: '10px 24px' }}
+              >
+                Join Channel <span className="arrow">→</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -168,7 +255,7 @@ export default function Home() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="cta-band reveal">
-            <h2>Four Phases. One Transition.</h2>
+            <h2>Three Phases. One Transition.</h2>
             <p>From company engagement to the final Buildathon — every step is designed to make you industry-ready.</p>
             <div className="hero-cta">
               <Link className="btn btn-primary" href="/process">

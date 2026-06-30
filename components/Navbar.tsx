@@ -23,7 +23,7 @@ export default function Navbar() {
             </button>
 
             <nav>
-                <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+                <ul className={`nav-links ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(false)}>
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/process">Process</Link></li>

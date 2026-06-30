@@ -12,12 +12,11 @@ export default function Impact() {
       <section className="section">
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">Our Impact</span>
-            <h2>Real Students. Real Results.</h2>
+            <span className="eyebrow">Why Partner With Us</span>
+            <h2>The Corporate Advantage</h2>
             <div className="title-rule"></div>
             <p className="lead" style={{ marginTop: '20px' }}>
-              TransitionX isn't just a programme — it's a movement. Here's what happens
-              when you put the right students in front of the right industry challenges.
+              TransitionX creates lasting value by connecting academia with industry through innovation, collaboration, and practical problem solving. The program empowers organizations to engage with the next generation of engineering and technology professionals.
             </p>
           </div>
         </div>
@@ -28,96 +27,91 @@ export default function Impact() {
         <div className="container">
           <div className="stats reveal">
             <div className="stat">
-              <div className="num">200+</div>
-              <div className="label">Students Impacted</div>
+              <div className="num">25</div>
+              <div className="label">Selected Teams</div>
             </div>
             <div className="stat">
-              <div className="num">10+</div>
-              <div className="label">Industry Partners</div>
+              <div className="num">5</div>
+              <div className="label">Technical Domains</div>
             </div>
             <div className="stat">
-              <div className="num">4</div>
-              <div className="label">Structured Phases</div>
+              <div className="num">2,500+</div>
+              <div className="label">Brand Reach</div>
             </div>
             <div className="stat">
-              <div className="num">92%</div>
-              <div className="label">Industry Readiness Rate</div>
+              <div className="num">100%</div>
+              <div className="label">Industry Focus</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== IMPACT AREAS ===== */}
+      {/* ===== BENEFITS FOR PARTNERS ===== */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head center reveal">
-            <span className="eyebrow">What Changes</span>
-            <h2>The TransitionX Effect</h2>
+            <span className="eyebrow">Partner Benefits</span>
+            <h2>Why Companies Partner With Us</h2>
             <div className="title-rule"></div>
           </div>
-          <div className="grid grid-3">
-            {[
-              { icon: '🧠', title: 'Mindset Shift', desc: 'Students stop thinking like students and start thinking like professionals — approaching problems with industry-level clarity.' },
-              { icon: '🔧', title: 'Technical Depth', desc: 'Hands-on exposure to real tools, real codebases, and real engineering decisions that textbooks never cover.' },
-              { icon: '🤝', title: 'Professional Network', desc: 'Direct connections with industry mentors, company partners, and fellow engineers who are all making the same transition.' },
-              { icon: '📊', title: 'Problem Solving', desc: 'Structured exposure to ambiguous, open-ended industry problems builds the kind of critical thinking employers value most.' },
-              { icon: '🎯', title: 'Career Clarity', desc: 'Students discover what industries, roles and challenges genuinely excite them — before they sign their first contract.' },
-              { icon: '🚀', title: 'Confidence', desc: 'Walking into a job interview having already solved a real industry problem is a confidence that no classroom can manufacture.' },
-            ].map((item, i) => (
-              <div className={`card reveal d${(i % 4) + 1}`} key={i}>
-                <div className="icon" style={{ fontSize: '1.4rem' }}>{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
-            ))}
+          
+          <div className="grid grid-2">
+            <div className="card reveal d1">
+              <div className="icon" style={{ fontSize: '1.4rem' }}>💡</div>
+              <h3>Innovative Solutions</h3>
+              <p>Gain creative, research-driven ideas and new perspectives for real business and technical challenges.</p>
+            </div>
+            <div className="card reveal d2">
+              <div className="icon" style={{ fontSize: '1.4rem' }}>🎓</div>
+              <h3>Access to Emerging Talent</h3>
+              <p>Connect with highly skilled 3rd/4th-year students and fresh graduates for future recruitment and internships.</p>
+            </div>
+            <div className="card reveal d3">
+              <div className="icon" style={{ fontSize: '1.4rem' }}>📢</div>
+              <h3>Brand Visibility</h3>
+              <p>Showcase your organization through promotions across official platforms, reaching 2,500+ followers and the wider university community.</p>
+            </div>
+            <div className="card reveal d4">
+              <div className="icon" style={{ fontSize: '1.4rem' }}>📈</div>
+              <h3>Long-Term Value</h3>
+              <p>Build lasting relationships that support industry-academia innovation and future collaboration.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ===== FOR COMPANIES ===== */}
+      {/* ===== EXPECTED OUTCOMES & IMPACT ===== */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">For Industry Partners</span>
-            <h2>Why Companies Partner With Us</h2>
-            <div className="title-rule"></div>
-          </div>
-          <div className="grid grid-2">
-            <div className="card reveal d1">
-              <div className="icon" style={{ fontSize: '1.4rem' }}>🔍</div>
-              <h3>Early Talent Pipeline</h3>
-              <p>Identify and engage top engineering talent before they hit the job market. TransitionX gives companies first access to the best graduating engineers.</p>
+          <div className="card reveal" style={{ padding: '36px' }}>
+            <div className="section-head reveal" style={{ textAlign: 'left', marginBottom: '24px' }}>
+              <span className="eyebrow">Outcomes</span>
+              <h2>Expected Outcomes &amp; Impact</h2>
+              <div className="title-rule" style={{ marginLeft: 0 }}></div>
             </div>
-            <div className="card reveal d2">
-              <div className="icon" style={{ fontSize: '1.4rem' }}>💡</div>
-              <h3>Fresh Perspectives</h3>
-              <p>Students bring unfiltered, creative thinking to real company challenges. Some of the best solutions come from people who haven't yet been told "that's not how we do it."</p>
-            </div>
-            <div className="card reveal d3">
-              <div className="icon" style={{ fontSize: '1.4rem' }}>🌱</div>
-              <h3>CSR & Brand Building</h3>
-              <p>Investing in student development builds genuine goodwill in the engineering community and positions your company as a place where talent wants to grow.</p>
-            </div>
-            <div className="card reveal d4">
-              <div className="icon" style={{ fontSize: '1.4rem' }}>⚡</div>
-              <h3>Reduced Onboarding Cost</h3>
-              <p>Students who've already engaged with your challenges and culture arrive ready to contribute — cutting the time and cost of traditional onboarding significantly.</p>
-            </div>
+            <ul style={{ display: 'grid', gap: '14px', listStyleType: 'disc', paddingLeft: '20px', fontSize: '1.05rem', color: 'var(--ink-soft)' }}>
+              <li>Strengthen partnerships between industry and universities through direct collaboration.</li>
+              <li>Enable students to gain practical experience by solving real-world challenges.</li>
+              <li>Generate innovative solution concepts that organizations can further explore and develop.</li>
+              <li>Enhance students&apos; technical, analytical, and professional skills in real industry scenarios.</li>
+              <li>Build a sustainable platform for future industry–academia collaboration, research, and talent development.</li>
+            </ul>
           </div>
         </div>
       </section>
+
+     
 
       {/* ===== CTA BAND ===== */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="cta-band reveal">
-            <h2>Want to Be Part of the Impact?</h2>
-            <p>Whether you're a student ready to transition or a company looking for fresh talent — TransitionX has a place for you.</p>
-            <div className="hero-cta">
-              <Link className="btn btn-primary" href="/register">
-                Register now <span className="arrow">→</span>
-              </Link>
-              <Link className="btn btn-ghost" href="/contact">Partner with us</Link>
+          <div className="cta-band reveal" style={{ textAlign: 'center' }}>
+            <h2>Partner With Us</h2>
+            <p>Bring your real-world challenges to TransitionX and collaborate with the next generation of engineering talent.</p>
+            <div style={{ marginTop: '28px' }}>
+              <a className="btn btn-primary" href="mailto:transitionx.ieee@gmail.com?subject=Company Partnership Enquiry" style={{ padding: '16px 36px', fontSize: '1.1rem' }}>
+                Partner with us <span className="arrow">→</span>
+              </a>
             </div>
           </div>
         </div>

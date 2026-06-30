@@ -27,19 +27,15 @@ export default function Dates() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="timeline">
-            {[
-              { date: '29th June 2026', title: 'Applications Open', desc: 'Registration opens for final-year engineering students from SLIIT and Curtin University Colombo.' },
-              { date: '06th July 2026', title: 'Applications Close', desc: 'Last day to submit your registration. Selected participants will be notified within one week.' },
-              { date: '15th July 2026', title: 'Informative Webinar', desc: 'Join our online session to uncover the competition structure, review event guidelines, and get a preview of the industry challenge categories.' },
-              { date: '18th July 2026', title: 'Company Meetup', desc: 'Meet your industry partners face-to-face. Companies will present their real-world challenges, allowing your team to ask questions and clarify constraints before development begins.' },
-              { date: 'Late July (Ongoing)', title: 'Support Sessions', desc: 'Level up your capabilities. Participate in targeted workshops and hands-on training designed to equip you with the practical skills needed to tackle your specific industry problem.' },
-              { date: '1st August 2026', title: 'Progress Checkpoint', desc: "Submit your team's formal problem proposal. This document will outline your technical understanding of the challenge and the solution architecture you plan to build." },
-              { date: '1st – 18th August 2026', title: 'Company Feedback & Refinement', desc: 'Industry partners will review your checkpoint proposals. Use their professional, constructive feedback to refine your approach, pivot if necessary, and perfect your final deliverable.' },
-              { date: 'Prior to the Finale', title: 'Solution Submission', desc: 'Lock in your hard work. Finalize and submit your technical research, code, simulations, or working prototypes for the judges to evaluate.' },
-              { date: '22nd August 2026', title: 'Grand Finale Judgement Day', desc: 'The ultimate test of transition. Step onto the stage to pitch your final solutions and run live demonstrations directly for the industry partner panels.' },
-            ].map((item, i) => (
+            {([
+              { date: '29th June 2026', title: 'Applications Open', desc: "Registration is officially open to 3rd-year, 4th-year, and fresh graduate students across Sri Lanka! Gather your team of 1 to 3 members and step up to solve real-world industry challenges. Don't wait—spaces are highly competitive and only 25 teams will be selected to compete." },
+              { date: '13th July 2026', title: 'Applications Close', desc: "This is the final deadline to submit your team's registration. Secure your spot before the portal closes. Selected participants will be notified shortly after." },
+              { title: 'Phase 01: Kick-off with an Online Session', desc: 'Join our informative webinar to uncover the competition structure. Following this, meet industry partners face-to-face for company introductions, challenge briefings, and problem clarification before development begins.' },
+              { title: 'Phase 02: Guidance Workshops & Mentoring', desc: 'Participate in targeted support sessions and hands-on training. Submit your formal problem proposal for a progress checkpoint, and use constructive feedback from industry partners to refine your solution architecture.' },
+              { title: 'Phase 03: Final Pitch & Evaluation', desc: 'Submit your final technical research and working prototypes prior to the finale. On Judgement Day, step onto the stage to present live demonstrations of your final solutions to the industry expert panels.' },
+            ] as Array<{ date?: string; title: string; desc: string }>).map((item, i) => (
               <div className="tl-item card reveal" key={i}>
-                <div className="tl-date">{item.date}</div>
+                {item.date && <div className="tl-date">{item.date}</div>}
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
@@ -69,9 +65,9 @@ export default function Dates() {
             <h2>Don&apos;t Miss Your Window.</h2>
             <p>Applications open January 2026. Secure your spot before they close.</p>
             <div className="hero-cta">
-              <Link className="btn btn-primary" href="/register">
+              <a className="btn btn-primary" href="https://forms.gle/bojVLUrsnpsFGxRq6" target="_blank" rel="noopener noreferrer">
                 Register now <span className="arrow">→</span>
-              </Link>
+              </a>
               <Link className="btn btn-ghost" href="/contact">Have a question?</Link>
             </div>
           </div>

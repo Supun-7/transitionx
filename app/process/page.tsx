@@ -8,30 +8,42 @@ export default function Process() {
   return (
     <main style={{ paddingTop: '80px' }}>
 
+      {/* ===== INTRODUCING TRANSITIONX ===== */}
       <section className="section">
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">The Process</span>
-            <h2>Four Phases. One Transformation.</h2>
+            <span className="eyebrow">Introducing TransitionX</span>
+            <h2>Bridging Academia &amp; Industry</h2>
             <div className="title-rule"></div>
             <p className="lead" style={{ marginTop: '20px' }}>
-              TransitionX is built around a structured 4-phase journey — each phase designed
-              to progressively close the gap between academic knowledge and industry readiness.
+              Transition-X is an industry-driven innovation program jointly organized by the IEEE Student Branch of SLIIT and the IEEE Student Branch of Curtin Colombo. The initiative aims to bridge the gap between academia and industry by connecting 3rd/4th-year students and fresh graduates with real-world challenges submitted by industry partners.
             </p>
+          </div>
+          
+          <div style={{ display: 'grid', gap: '20px', marginTop: '32px', color: 'var(--ink-soft)', lineHeight: 1.6, fontSize: '1.02rem' }}>
+            
           </div>
         </div>
       </section>
 
+      
+
+      {/* ===== THE ROADMAP: PHASES & MILESTONES ===== */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="rail reveal">
+          <div className="section-head center reveal">
+            <span className="eyebrow">The Roadmap</span>
+            <h2>Phases &amp; Milestones</h2>
+            <div className="title-rule"></div>
+          </div>
+
+          <div className="rail reveal" style={{ marginBottom: '60px' }}>
             <div className="rail-track" />
-            <div className="rail-nodes">
+            <div className="rail-nodes" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
               {[
-                { num: '01', name: 'Company Engagement', desc: 'Industry meets campus' },
-                { num: '02', name: 'Skill Accelerator', desc: 'Targeted workshops' },
-                { num: '03', name: 'Solution Refinement', desc: 'Guided by experts' },
-                { num: '04', name: 'Industry Buildathon', desc: 'The final showcase' },
+                { num: '01', name: 'Initial Stage', desc: 'Registration & Problem Distribution' },
+                { num: '02', name: 'Workshops & Mentoring', desc: 'Guidance Workshops & Mentoring' },
+                { num: '03', name: 'Final Pitch & Evaluation', desc: 'Final Pitch & Evaluation' },
               ].map((p, i) => (
                 <div className="rail-node" key={i}>
                   <div className="bead">{p.num}</div>
@@ -41,92 +53,65 @@ export default function Process() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
 
           <div className="phase card reveal d1" style={{ marginBottom: '28px' }}>
             <div className="phase-main">
               <span className="phase-tag">PHASE 01</span>
-              <h3>Company Engagement</h3>
-              <p className="phase-sub">Where industry meets the next generation</p>
+              <h3>Initial Stage</h3>
+              <p className="phase-sub">Registration &amp; Problem Distribution</p>
               <ul>
-                <li>Partner companies present real-world challenges to students</li>
-                <li>Students gain direct exposure to industry problems and expectations</li>
-                <li>Teams are formed around company challenge domains</li>
-                <li>Initial briefings and problem statements are distributed</li>
+                <li>Kick off with an Online Session</li>
+                <li>Company Introductions, Challenge Briefing, Problem Clarification &amp; Expert session</li>
+                <li>Participant Registration and Problem Distribution after Validating</li>
               </ul>
             </div>
             <div className="outcome card">
               <div className="ol">Phase Outcome</div>
-              <p>Students leave with a clear understanding of a real industry challenge and a team ready to tackle it.</p>
+              <p>Teams are registered, eligibility is validated, and challenge scopes are distributed with initial support briefings.</p>
             </div>
           </div>
 
           <div className="phase card reveal d2" style={{ marginBottom: '28px' }}>
             <div className="phase-main">
               <span className="phase-tag">PHASE 02</span>
-              <h3>Skill Accelerator</h3>
-              <p className="phase-sub">Closing the gap between theory and practice</p>
+              <h3>Workshops &amp; Mentoring</h3>
+              <p className="phase-sub">Guidance Workshops &amp; Mentoring</p>
               <ul>
-                <li>Targeted workshops on industry-relevant skills</li>
-                <li>Hands-on sessions covering technical and soft skills</li>
-                <li>Expert-led training aligned to company challenge requirements</li>
-                <li>Peer learning and collaborative problem-solving sessions</li>
+                <li>Workshops, Mentoring &amp; Industry Exposure</li>
+                <li>Company site visits, environment observation, problem clarification, workshops, Mentoring</li>
+                <li>Progress Reviews, Mentor Guidance &amp; Team Collaboration</li>
               </ul>
             </div>
             <div className="outcome card">
               <div className="ol">Phase Outcome</div>
-              <p>Students are equipped with the specific skills needed to approach their industry challenge with confidence.</p>
+              <p>Teams engage directly in workshops, site visits, and progress check-ins, gaining crucial industry guidance.</p>
             </div>
           </div>
 
           <div className="phase card reveal d3" style={{ marginBottom: '28px' }}>
             <div className="phase-main">
               <span className="phase-tag">PHASE 03</span>
-              <h3>Solution Refinement</h3>
-              <p className="phase-sub">Guided by those who&apos;ve walked the path</p>
+              <h3>Final Pitch &amp; Evaluation</h3>
+              <p className="phase-sub">Final Pitch &amp; Evaluation</p>
               <ul>
-                <li>Teams work independently to engineer their initial problem proposals</li>
-                <li>Proposals are submitted directly to company partners for professional review</li>
-                <li>Feedback loops between students, mentors and company partners</li>
-                <li>Access to optional mentorship or deeper collaboration</li>
+                <li>Final solution presentation/live demonstration/simulations, judging by industry experts and award ceremony.</li>
               </ul>
             </div>
             <div className="outcome card">
               <div className="ol">Phase Outcome</div>
-              <p>Teams have a refined, mentor-validated solution approach ready for the final buildathon.</p>
-            </div>
-          </div>
-
-          <div className="phase card reveal d4" style={{ marginBottom: '28px' }}>
-            <div className="phase-main">
-              <span className="phase-tag">PHASE 04</span>
-              <h3>Industry Buildathon</h3>
-              <p className="phase-sub">The ultimate test of transition</p>
-              <ul>
-                <li>Teams present final solutions to industry partner panels</li>
-                <li>Live demonstrations and technical evaluations</li>
-                <li>Industry judges assess real-world applicability and innovation</li>
-                <li>Top teams recognized and connected with industry opportunities</li>
-              </ul>
-            </div>
-            <div className="outcome card">
-              <div className="ol">Phase Outcome</div>
-              <p>Students walk away with real industry exposure, professional connections, and proof of their capabilities.</p>
+              <p>Solutions are pitched to the expert panel, prototypes are evaluated, and winning teams are recognized.</p>
             </div>
           </div>
 
         </div>
       </section>
 
+      {/* ===== CTA ===== */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="cta-band reveal">
-            <h2>See the Impact We&apos;ve Made</h2>
-            <p>Discover how TransitionX has transformed students into industry-ready engineers.</p>
+            <h2>Ready to make an Impact? </h2>
+            <p>Discover how TransitionX can transform students into industry-ready engineers.</p>
             <div className="hero-cta">
               <Link className="btn btn-primary" href="/impact">
                 View impact <span className="arrow">→</span>

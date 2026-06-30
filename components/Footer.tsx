@@ -32,6 +32,42 @@ export default function Footer() {
                 className="footer-logo-img"
               />
             </div>
+            
+            <div style={{ marginTop: '24px', display: 'flex', gap: '16px', alignItems: 'center' }}>
+              <span style={{ fontSize: '0.88rem', color: 'var(--ink-faint)', fontWeight: 500 }}>Follow us:</span>
+              <a 
+                href="https://instagram.com/transitionx.official" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ cursor: 'pointer', transition: 'transform 0.2s', display: 'block' }}
+                className="hover-scale"
+              >
+                <div style={{ position: 'relative', width: '28px', height: '28px', borderRadius: '8px', overflow: 'hidden' }}>
+                  <Image
+                    src="/logo-computer-icons-clip-art-instagram-logo.jpg"
+                    alt="Instagram Logo"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              </a>
+              <a 
+                href="https://whatsapp.com/channel/0029VbCw8fD5fM5dbMtn8S19" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ cursor: 'pointer', transition: 'transform 0.2s', display: 'block' }}
+                className="hover-scale"
+              >
+                <div style={{ position: 'relative', width: '28px', height: '28px', borderRadius: '8px', overflow: 'hidden' }}>
+                  <Image
+                    src="/whatsapp-vector-logo-icon-logotype-vector-social-media_901408-406.avif"
+                    alt="WhatsApp Logo"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              </a>
+            </div>
           </div>
 
           <div className="footer-links">

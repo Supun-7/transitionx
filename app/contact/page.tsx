@@ -35,17 +35,23 @@ export default function Contact() {
             <div className="card contact-card reveal d1">
               <div className="icon" style={{ margin: '0 auto 18px', fontSize: '1.4rem' }}>👤</div>
               <div className="role">Programme Lead — SLIIT</div>
-              <div className="name">Contact Name</div>
+              <div className="name">Senethmi Wickramanayake</div>
               <div className="ph">
-                <a href="tel:+94XXXXXXXXX">+94 XX XXX XXXX</a>
+                <a href="tel:+94717144188">+94 71 714 4188</a>
+              </div>
+              <div className="ph" style={{ marginTop: '4px' }}>
+                <a href="mailto:senwickramanayake25@gmail.com" style={{ fontSize: '0.9rem', opacity: 0.85 }}>senwickramanayake25@gmail.com</a>
               </div>
             </div>
             <div className="card contact-card reveal d2">
               <div className="icon" style={{ margin: '0 auto 18px', fontSize: '1.4rem' }}>👤</div>
-              <div className="role">Programme Lead — CUC</div>
-              <div className="name">Contact Name</div>
+              <div className="role">Programme Lead — Curtin University Colombo</div>
+              <div className="name">Sanindu Talwaththa</div>
               <div className="ph">
-                <a href="tel:+94XXXXXXXXX">+94 XX XXX XXXX</a>
+                <a href="tel:+94710540797">+94 71 054 0797</a>
+              </div>
+              <div className="ph" style={{ marginTop: '4px' }}>
+                <a href="mailto:sanindutalwatte9@gmail.com" style={{ fontSize: '0.9rem', opacity: 0.85 }}>sanindutalwatte9@gmail.com</a>
               </div>
             </div>
             <div className="card contact-card reveal d3">
@@ -53,7 +59,7 @@ export default function Contact() {
               <div className="role">General Enquiries</div>
               <div className="name">Email Us</div>
               <div className="ph">
-                <a href="mailto:transitionx@ieee.org">transitionx@ieee.org</a>
+                <a href="mailto:[EMAIL_ADDRESS]">transitionx.ieee@gmail.com</a>
               </div>
             </div>
           </div>
@@ -68,26 +74,14 @@ export default function Contact() {
             <h2>Interested in Partnering?</h2>
             <div className="title-rule"></div>
           </div>
-          <div className="grid grid-2">
-            <div className="card reveal d1">
-              <div className="icon" style={{ fontSize: '1.4rem' }}>🏢</div>
-              <h3>For Companies</h3>
-              <p>Want to bring your real challenges to the next generation of engineers? Partner with TransitionX and get access to motivated, talented final-year students.</p>
-              <div style={{ marginTop: '20px' }}>
-                <a className="btn btn-primary" href="mailto:transitionx@ieee.org?subject=Company Partnership Enquiry">
-                  Partner with us <span className="arrow">→</span>
-                </a>
-              </div>
-            </div>
-            <div className="card reveal d2">
-              <div className="icon" style={{ fontSize: '1.4rem' }}>🎓</div>
-              <h3>For Students</h3>
-              <p>Ready to make the transition from academia to industry? Register your interest and be the first to know when applications open.</p>
-              <div style={{ marginTop: '20px' }}>
-                <Link className="btn btn-primary" href="/register">
-                  Register interest <span className="arrow">→</span>
-                </Link>
-              </div>
+          <div className="card reveal" style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center' }}>
+            
+           
+            <p style={{ marginTop: '12px' }}>Want to bring your real challenges to the next generation of engineers? Partner with TransitionX and get access to motivated, talented final-year students.</p>
+            <div style={{ marginTop: '20px' }}>
+              <a className="btn btn-primary" href="mailto:transitionx.ieee@gmail.com?subject=Company Partnership Enquiry">
+                Partner with us <span className="arrow">→</span>
+              </a>
             </div>
           </div>
         </div>
@@ -98,13 +92,13 @@ export default function Contact() {
         <div className="container">
           <div className="cta-band reveal">
             <h2>Stay in the Loop</h2>
-            <p>Follow our official IEEE Student Branch channels for the latest updates on TransitionX 2026.</p>
+            <p>Follow our IEEE Student Branches</p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="https://www.linkedin.com/company/ieee-sb-sliit" target="_blank" rel="noopener noreferrer">
+              <a className="btn btn-primary" href="https://www.sliit.lk/life-at-sliit/clubs-and-societies/ieee-student-branch-in-sliit" target="_blank" rel="noopener noreferrer">
                 IEEE SB SLIIT <span className="arrow">→</span>
               </a>
-              <a className="btn btn-ghost" href="https://www.linkedin.com/company/ieee-sb-cuc" target="_blank" rel="noopener noreferrer">
-                IEEE SB CUC
+              <a className="btn btn-ghost" href="https://ieeeofcuc.com/" target="_blank" rel="noopener noreferrer">
+                IEEE SB CUC <span className="arrow">→</span>
               </a>
             </div>
           </div>

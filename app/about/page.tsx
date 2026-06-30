@@ -34,16 +34,16 @@ export default function About() {
             <div className="card reveal d1">
               <h3>The Problem</h3>
               <p style={{ marginTop: '12px' }}>
-                Final-year engineering students graduate with strong theoretical foundations
+                Undergraduates and fresh graduates often complete their degrees with strong theoretical foundations
                 but limited real-world exposure. Companies spend months re-training new hires
-                on skills that should have been developed during their degree.
+                on skills that should have been developed during their studies.
               </p>
             </div>
             <div className="card reveal d2">
               <h3>The Solution</h3>
               <p style={{ marginTop: '12px' }}>
-                TransitionX bridges this gap through a structured 4-phase programme —
-                connecting students directly with industry partners, real challenges,
+                TransitionX bridges this gap through a structured 3-phase programme —
+                connecting 3rd/4th-year students and fresh graduates directly with industry partners, real challenges,
                 and professional mentors before they ever set foot in an office.
               </p>
             </div>

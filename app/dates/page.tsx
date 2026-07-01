@@ -63,7 +63,7 @@ export default function Dates() {
         <div className="container">
           <div className="cta-band reveal">
             <h2>Don&apos;t Miss Your Window.</h2>
-            <p>Applications open January 2026. Secure your spot before they close.</p>
+            <p>Applications are now open. Secure your spot before they close</p>
             <div className="hero-cta">
               <a className="btn btn-primary" href="https://forms.gle/rUxKqfu6AumZiqQ48" target="_blank" rel="noopener noreferrer">
                 Register now <span className="arrow">→</span>

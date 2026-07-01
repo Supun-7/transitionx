@@ -65,7 +65,7 @@ export default function Dates() {
             <h2>Don&apos;t Miss Your Window.</h2>
             <p>Applications are now open. Secure your spot before they close</p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="https://forms.gle/bojVLUrsnpsFGxRq6" target="_blank" rel="noopener noreferrer">
+              <a className="btn btn-primary" href="https://forms.gle/rUxKqfu6AumZiqQ48" target="_blank" rel="noopener noreferrer">
                 Register now <span className="arrow">→</span>
               </a>
               <Link className="btn btn-ghost" href="/contact">Have a question?</Link>

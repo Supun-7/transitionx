@@ -18,6 +18,17 @@ export default function Register() {
             <p className="lead" style={{ marginTop: '20px' }}>
               Please review all instructions carefully before starting your application. With only <strong className="accent-text">25 team slots available</strong>, spaces are highly competitive, and incomplete or incorrect submissions will not be reviewed.
             </p>
+            <div className="hero-cta" style={{ marginTop: '28px' }}>
+              <a
+                className="btn btn-primary"
+                href="https://forms.gle/rUxKqfu6AumZiqQ48"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontSize: '1.1rem', padding: '16px 36px' }}
+              >
+                Register Now <span className="arrow">→</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -165,7 +176,7 @@ export default function Register() {
             <div style={{ marginTop: '28px' }}>
               <a
                 className="btn btn-primary"
-                href="https://forms.gle/bojVLUrsnpsFGxRq6"
+                href="https://forms.gle/rUxKqfu6AumZiqQ48"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: '1.1rem', padding: '16px 36px' }}

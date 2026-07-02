@@ -46,7 +46,7 @@ export default function Contact() {
             <div className="card contact-card reveal d2">
               <div className="icon" style={{ margin: '0 auto 18px', fontSize: '1.4rem' }}>👤</div>
               <div className="role">Programme Lead — Curtin University Colombo</div>
-              <div className="name">Sanindu Talwaththe</div>
+              <div className="name">Sanindu Talwatte</div>
               <div className="ph">
                 <a href="tel:+94710540797">+94 71 054 0797</a>
               </div>

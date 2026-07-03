@@ -2,6 +2,7 @@ import './globals.css'
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { Rajdhani } from "next/font/google"
+import { Analytics } from "@vercel/analytics/react"
 import Script from 'next/script'
 
 const rajdhani = Rajdhani({weight: ["500" , "600" , "700"],subsets:["latin"]})
@@ -36,6 +37,7 @@ export default function Rootlayout({children}: {children: React.ReactNode}) {
         <Navbar/>
         {children}
         <Footer/>
+        <Analytics />
       </body>
     </html>
   )

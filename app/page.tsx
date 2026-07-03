@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import HeroScene from "../components/HeroScene"
+import { InstagramIcon, WhatsAppIcon, LinkedInIcon } from "../components/Icons"
 
 export default function Home() {
   useEffect(() => {
@@ -183,7 +184,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-2" style={{ maxWidth: '720px', margin: '0 auto', gap: '20px' }}>
+          <div className="grid grid-2" style={{ maxWidth: '960px', margin: '0 auto', gap: '20px' }}>
             <div className="card reveal d1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
               <a 
                 href="https://instagram.com/transitionx.official" 
@@ -192,13 +193,8 @@ export default function Home() {
                 style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
                 className="hover-scale"
               >
-                <div style={{ position: 'relative', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', overflow: 'hidden' }}>
-                  <Image
-                    src="/logo-computer-icons-clip-art-instagram-logo.jpg"
-                    alt="Instagram Logo"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'var(--lavender)' }}>
+                  <InstagramIcon style={{ width: '28px', height: '28px' }} />
                 </div>
               </a>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>Instagram</h3>
@@ -224,13 +220,8 @@ export default function Home() {
                 style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
                 className="hover-scale"
               >
-                <div style={{ position: 'relative', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', overflow: 'hidden' }}>
-                  <Image
-                    src="/whatsapp-vector-logo-icon-logotype-vector-social-media_901408-406.avif"
-                    alt="WhatsApp Logo"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'var(--lavender)' }}>
+                  <WhatsAppIcon style={{ width: '28px', height: '28px' }} />
                 </div>
               </a>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>WhatsApp Channel</h3>
@@ -245,6 +236,60 @@ export default function Home() {
                 style={{ fontSize: '0.95rem', padding: '10px 24px' }}
               >
                 Join Channel <span className="arrow">→</span>
+              </a>
+            </div>
+
+            <div className="card reveal d3" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
+              <a 
+                href="https://www.linkedin.com/company/ieee-student-branch-of-sliit/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
+                className="hover-scale"
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'var(--lavender)' }}>
+                  <LinkedInIcon style={{ width: '28px', height: '28px' }} />
+                </div>
+              </a>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>IEEE SB SLIIT LinkedIn</h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
+                Connect with the IEEE Student Branch of SLIIT for professional updates and networking.
+              </p>
+              <a 
+                href="https://www.linkedin.com/company/ieee-student-branch-of-sliit/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-ghost"
+                style={{ fontSize: '0.95rem', padding: '10px 24px' }}
+              >
+                Connect on LinkedIn
+              </a>
+            </div>
+
+            <div className="card reveal d4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
+              <a 
+                href="https://www.linkedin.com/company/ieee-student-branch-of-cuc/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
+                className="hover-scale"
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'var(--lavender)' }}>
+                  <LinkedInIcon style={{ width: '28px', height: '28px' }} />
+                </div>
+              </a>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>IEEE SB CUC LinkedIn</h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
+                Connect with the IEEE Student Branch of Curtin University Colombo for industry news.
+              </p>
+              <a 
+                href="https://www.linkedin.com/company/ieee-student-branch-of-cuc/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-ghost"
+                style={{ fontSize: '0.95rem', padding: '10px 24px' }}
+              >
+                Connect on LinkedIn
               </a>
             </div>
           </div>

@@ -34,7 +34,7 @@ export default function Contact() {
           <div className="grid grid-3">
             <div className="card contact-card reveal d1">
               <div className="icon" style={{ margin: '0 auto 18px', fontSize: '1.4rem' }}>👤</div>
-              <div className="role">Programme Lead — SLIIT</div>
+              <div className="role">Event Chairperson — SLIIT</div>
               <div className="name">Senethmi Wickramanayake</div>
               <div className="ph">
                 <a href="tel:+94717144188">+94 71 714 4188</a>
@@ -45,7 +45,7 @@ export default function Contact() {
             </div>
             <div className="card contact-card reveal d2">
               <div className="icon" style={{ margin: '0 auto 18px', fontSize: '1.4rem' }}>👤</div>
-              <div className="role">Programme Lead — Curtin University Colombo</div>
+              <div className="role">Event Chairperson — Curtin University Colombo</div>
               <div className="name">Sanindu Talwatte</div>
               <div className="ph">
                 <a href="tel:+94710540797">+94 71 054 0797</a>

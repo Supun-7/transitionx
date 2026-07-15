@@ -159,12 +159,74 @@ export default function Register() {
           </div>
           <div className="grid grid-3">
             {[
-              { desc: 'Open to 3rd year, 4th year, and fresh graduate students only. (1st and 2nd year students are not eligible).' },
-              { desc: 'Innovation requires diverse perspectives. We welcome students from all technical backgrounds, including software, electrical, mechanical, civil engineering, and beyond.' },
-              { desc: 'We are seeking relentless problem-solvers who are ready to step out of the classroom and bridge the gap between academic theory and real-world industry execution.' },
+              {
+                header: 'ELIGIBLE BATCHES',
+                boldText: 'Open exclusively to 3rd-year, 4th-year, and fresh graduate students.',
+                bodyText: '1st and 2nd-year students are not eligible.',
+                accentColor: 'linear-gradient(90deg, var(--x-cyan), var(--x-magenta))'
+              },
+              {
+                header: 'ALL FIELDS WELCOME',
+                boldText: 'Built for diverse perspectives across all engineering and tech backgrounds—including Software, Electrical, Mechanical, Civil, and beyond.',
+                bodyText: '',
+                accentColor: 'linear-gradient(90deg, var(--x-magenta), var(--lavender))'
+              },
+              {
+                header: 'THE PERFECT FIT',
+                boldText: 'Designed for relentless problem-solvers ready to transition from classroom theory to real-world industry execution.',
+                bodyText: '',
+                accentColor: 'linear-gradient(90deg, var(--x-cyan), var(--lavender))'
+              }
             ].map((item, i) => (
-              <div className={`card reveal d${i + 1}`} key={i}>
-                <p style={{ fontSize: '1.25rem', fontWeight: 600, lineHeight: 1.5, color: 'var(--white)' }}>{item.desc}</p>
+              <div 
+                className={`card reveal d${i + 1}`} 
+                key={i}
+                style={{
+                  position: 'relative',
+                  padding: '32px 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  overflow: 'hidden'
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '2px',
+                  background: item.accentColor
+                }} />
+                <span style={{ 
+                  fontSize: '0.75rem', 
+                  fontWeight: 700, 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1.5px', 
+                  color: 'var(--lavender)' 
+                }}>
+                  {item.header}
+                </span>
+                <p style={{ 
+                  fontSize: '1.15rem', 
+                  fontWeight: 700, 
+                  lineHeight: 1.45, 
+                  color: 'var(--white)', 
+                  margin: 0 
+                }}>
+                  {item.boldText}
+                </p>
+                {item.bodyText && (
+                  <p style={{ 
+                    fontSize: '0.95rem', 
+                    fontWeight: 400, 
+                    lineHeight: 1.5, 
+                    color: 'var(--ink-soft)', 
+                    margin: 0 
+                  }}>
+                    {item.bodyText}
+                  </p>
+                )}
               </div>
             ))}
           </div>

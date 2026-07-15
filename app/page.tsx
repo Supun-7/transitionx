@@ -145,8 +145,8 @@ export default function Home() {
             {[
               {
                 title: 'Digital Systems & Software',
-                progressVal: 20,
-                progressText: '20%',
+                progressVal: 45,
+                progressText: '45%',
                 statusTag: 'Spots Available',
                 statusClass: 'tag-info'
               },
@@ -159,24 +159,24 @@ export default function Home() {
               },
               {
                 title: 'Robotics & Embedded Systems',
-                progressVal: 7,
-                progressText: '~7%',
+                progressVal: 35,
+                progressText: '35%',
                 statusTag: 'Spots Available',
                 statusClass: 'tag-info'
               },
               {
                 title: 'Smart Manufacturing & Industrial Automation',
-                progressVal: 13,
-                progressText: '~13%',
+                progressVal: 30,
+                progressText: '30%',
                 statusTag: 'Spots Available',
                 statusClass: 'tag-info'
               },
               {
                 title: 'Civil Engineering & Smart Infrastructure',
-                progressVal: 0,
-                progressText: '0%',
-                statusTag: 'Be the First!',
-                statusClass: 'tag-success'
+                progressVal: 25,
+                progressText: '25%',
+                statusTag: 'Spots Available',
+                statusClass: 'tag-info'
               }
             ].map((item, idx) => (
               <div 

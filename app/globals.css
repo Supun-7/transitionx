@@ -927,3 +927,338 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
   }
 }
 
+/* =====================================================================
+   Live Registration Tracker Section Styling
+   ===================================================================== */
+.tracker-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.tracker-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  transition: transform .3s, border-color .3s, box-shadow .3s, background .3s;
+  position: relative;
+  overflow: hidden;
+}
+.tracker-card::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+}
+.tracker-card:hover {
+  transform: translateX(4px);
+  border-color: rgba(34, 211, 238, 0.4); /* x-cyan tint */
+  background: var(--glass-strong);
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+.tracker-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tracker-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.tracker-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--white);
+}
+.tracker-stats {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.tracker-progress-bg {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.tracker-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--purple), var(--x-cyan));
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.4);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0;
+}
+.reveal.in .tracker-progress-fill {
+  width: var(--progress-width);
+}
+.tracker-percentage {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--x-cyan);
+  text-align: right;
+  min-width: 60px;
+  flex-shrink: 0;
+  font-family: var(--font);
+}
+
+@media (max-width: 768px) {
+  .tracker-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: stretch;
+  }
+  .tracker-percentage {
+    text-align: left;
+    min-width: unset;
+  }
+  .tracker-card:hover {
+    transform: translateY(-4px);
+    transform: translateX(0);
+  }
+}
+
+/* =====================================================================
+   Countdown Timer Styling
+   ===================================================================== */
+.countdown-timer-wrap {
+  margin: 32px auto 8px;
+  max-width: 580px;
+  display: flex;
+  justify-content: center;
+}
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+.countdown-item {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 16px 8px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.countdown-item::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+}
+.countdown-item:hover {
+  border-color: rgba(202, 140, 211, 0.4);
+  box-shadow: 0 8px 24px rgba(59, 7, 100, 0.3);
+  transform: translateY(-2px);
+}
+.countdown-number {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1;
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: var(--font);
+  letter-spacing: 1px;
+}
+.countdown-label {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .countdown-grid {
+    gap: 8px;
+  }
+  .countdown-item {
+    padding: 12px 4px;
+  }
+}
+
+/* Pulsing Live Indicator Styling */
+.live-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e; /* green */
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
+  animation: pulse-live 2s infinite;
+}
+
+@keyframes pulse-live {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* Alert Banner Styling */
+.alert-banner {
+  background: linear-gradient(90deg, rgba(59,7,100,0.85), rgba(34,211,238,0.3));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  line-height: 1.4;
+}
+.alert-icon {
+  color: var(--x-cyan);
+  animation: alert-flash 1.5s infinite alternate;
+}
+@keyframes alert-flash {
+  to { opacity: 0.5; }
+}
+
+/* Tracker Badge Styling */
+.tracker-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  white-space: nowrap;
+}
+.tag-warning {
+  background: rgba(224, 86, 193, 0.15);
+  color: var(--x-magenta);
+  border: 1px solid rgba(224, 86, 193, 0.3);
+}
+.tag-info {
+  background: rgba(34, 211, 238, 0.15);
+  color: var(--x-cyan);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
+.tag-success {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* Home Phase Cards Layout */
+.home-phases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.home-phase-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.home-phase-tag {
+  align-self: flex-start;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: var(--purple);
+  border-radius: 6px;
+  margin-bottom: 12px;
+  color: var(--lavender);
+  border: 1px solid rgba(202,140,211,0.2);
+}
+.home-phase-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.home-phase-card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .home-phases-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Playbook Accordion Styles */
+.playbook-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.playbook-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(202, 140, 211, 0.3);
+}
+.playbook-card.open {
+  border-color: rgba(202, 140, 211, 0.5);
+  background-color: var(--glass-strong);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+.playbook-num {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--x-cyan);
+  font-family: var(--font);
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.playbook-toggle-icon {
+  user-select: none;
+}
+
+@media (max-width: 520px) {
+  .playbook-card h3 {
+    font-size: 1.05rem !important;
+  }
+  .playbook-num {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+

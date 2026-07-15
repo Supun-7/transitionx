@@ -18,6 +18,12 @@ export default function Home() {
   return (
     <main style={{ paddingTop: '80px' }}>
 
+      {/* ===== FLOATING ALERT BANNER ===== */}
+      <div className="alert-banner">
+        <span className="alert-icon">⚡</span>
+        <span className="alert-text">Registration Deadline Extended to July 29th! </span>
+      </div>
+
       {/* ===== HERO ===== */}
       <section className="hero-stage">
         <HeroScene />
@@ -80,25 +86,179 @@ export default function Home() {
               TransitionX is a structured industry transition programme designed for 3rd/4th-year students and fresh graduates. It connects graduating talent with real company challenges through workshops, mentorship, and a final Industry Buildathon — creating engineers who are truly industry-ready from day one.
             </p>
           </div>
+        </div>
+      </section>
 
-          {/* Stats */}
-          <div className="stats reveal d1">
-            <div className="stat">
-              <div className="num">3</div>
-              <div className="label">Structured Phases</div>
-            </div>
-            <div className="stat">
-              <div className="num">25</div>
-              <div className="label">Partner Companies</div>
-            </div>
-            <div className="stat">
-              <div className="num">75</div>
-              <div className="label">Students Impacted</div>
-            </div>
-            <div className="stat">
-              <div className="num">5</div>
-              <div className="label">Core Technical Domains</div>
-            </div>
+      {/* ===== ROADMAP: THREE PHASES ===== */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-head center reveal">
+            <span className="eyebrow">The Journey</span>
+            <h2>Three Phases. One Transition.</h2>
+            <div className="title-rule"></div>
+            <p className="lead" style={{ marginTop: '20px' }}>
+              TransitionX takes you through a structured pathway designed to transform academic learning into industry success.
+            </p>
+          </div>
+
+          <div className="home-phases-grid reveal">
+            {[
+              {
+                phase: 'PHASE 01',
+                title: 'Initial Stage',
+                desc: 'Webinar kick-off, company briefings, problem distribution, and team validation. Get matched with your core track.'
+              },
+              {
+                phase: 'PHASE 02',
+                title: 'Workshops & Mentoring',
+                desc: 'Targeted support sessions, hands-on training, mentor reviews, and feedback checkpoints to design your solution architecture.'
+              },
+              {
+                phase: 'PHASE 03',
+                title: 'Final Pitch & Evaluation',
+                desc: 'Submit technical research, deploy working prototypes, and deliver live solution presentations to industry expert panels.'
+              }
+            ].map((p, i) => (
+              <div className="card home-phase-card" key={i} style={{ padding: '28px' }}>
+                <span className="home-phase-tag">{p.phase}</span>
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== DOMAIN AVAILABILITY TRACKER ===== */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-head center reveal">
+            <span className="eyebrow">Real-Time Status</span>
+            <h2>Domain Availability</h2>
+            <div className="title-rule"></div>
+            <p className="lead" style={{ marginTop: '20px' }}>
+              Monitor live registration availability across each technical track. Each domain is strictly capped at 15 teams to maintain direct mentorship quality.
+            </p>
+          </div>
+
+          <div className="tracker-section">
+            {[
+              {
+                title: 'Digital Systems & Software',
+                progressVal: 20,
+                progressText: '20%',
+                statusTag: 'Spots Available',
+                statusClass: 'tag-info'
+              },
+              {
+                title: 'AI, Data & Cyber Technologies',
+                progressVal: 60,
+                progressText: '60%',
+                statusTag: 'Filling Fast',
+                statusClass: 'tag-warning'
+              },
+              {
+                title: 'Robotics & Embedded Systems',
+                progressVal: 7,
+                progressText: '~7%',
+                statusTag: 'Spots Available',
+                statusClass: 'tag-info'
+              },
+              {
+                title: 'Smart Manufacturing & Industrial Automation',
+                progressVal: 13,
+                progressText: '~13%',
+                statusTag: 'Spots Available',
+                statusClass: 'tag-info'
+              },
+              {
+                title: 'Civil Engineering & Smart Infrastructure',
+                progressVal: 0,
+                progressText: '0%',
+                statusTag: 'Be the First!',
+                statusClass: 'tag-success'
+              }
+            ].map((item, idx) => (
+              <div 
+                className="tracker-card reveal" 
+                key={idx} 
+                style={{ '--progress-width': `${item.progressVal}%` } as React.CSSProperties}
+              >
+                <div className="tracker-info">
+                  <div className="tracker-header-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+                    <span className="tracker-title">{item.title}</span>
+                    <span className={`tracker-badge ${item.statusClass}`}>{item.statusTag}</span>
+                  </div>
+                  <div className="tracker-progress-bg">
+                    <div className="tracker-progress-fill" />
+                  </div>
+                </div>
+                <div className="tracker-percentage">
+                  {item.progressText}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Secure Your Slot CTA Button */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '36px' }} className="reveal">
+            <Link href="/register" className="btn btn-primary" style={{ padding: '14px 32px' }}>
+              Secure Your Slot Now <span className="arrow">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TRACK DETAILS ===== */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-head center reveal">
+            <span className="eyebrow">Track Details</span>
+            <h2>What Each Domain Entails</h2>
+            <div className="title-rule"></div>
+            <p className="lead" style={{ marginTop: '20px' }}>
+              Understand the core technical focus, scope, and tools utilized across each competition track.
+            </p>
+          </div>
+
+          <div className="grid grid-3 reveal">
+            {[
+              {
+                title: 'Digital Systems & Software',
+                desc: 'Focuses on modern software architectures, cloud deployments, API integrations, and robust web applications.',
+                tech: 'React · Node.js · TypeScript · AWS / Azure · PostgreSQL'
+              },
+              {
+                title: 'AI, Data & Cyber Technologies',
+                desc: 'Covers machine learning pipelines, LLM fine-tuning, big data analytics, threat detection, and system compliance.',
+                tech: 'Python · PyTorch · Docker · Kubernetes · LangChain'
+              },
+              {
+                title: 'Robotics & Embedded Systems',
+                desc: 'Integrates microcontrollers, sensors, communication protocols, actuators, and hardware control.',
+                tech: 'C++ · RTOS · ESP32 · STM32 · ROS · I2C / SPI'
+              },
+              {
+                title: 'Smart Manufacturing & Industrial Automation',
+                desc: 'Explores industrial IoT gateways, SCADA systems, PLCs, automated telemetry, and factory networking.',
+                tech: 'Modbus · OPC UA · Siemens TIA Portal · Node-RED'
+              },
+              {
+                title: 'Civil Engineering & Smart Infrastructure',
+                desc: 'Applies smart structural health monitoring, BIM integrations, geographic information systems, and materials data.',
+                tech: 'BIM / Revit · GIS · Sensor networks · Structural Analysis'
+              }
+            ].map((track, i) => (
+              <div className="card" key={i} style={{ display: 'flex', flexDirection: 'column', padding: '28px' }}>
+                <div style={{ flexGrow: 1 }}>
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: '12px', color: 'var(--white)' }}>{track.title}</h3>
+                  <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '24px' }}>{track.desc}</p>
+                </div>
+                <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--x-cyan)', letterSpacing: '1px', textTransform: 'uppercase', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '12px', marginTop: 'auto' }}>
+                  {track.tech}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -132,41 +292,6 @@ export default function Home() {
               </div>
               <h3>Mission</h3>
               <p>To deliver a structured, immersive programme that equips 3rd/4th-year students and fresh graduates with real industry exposure, professional mentorship, and hands-on problem-solving experience.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== TECHNICAL DOMAINS & CORE PILLARS ===== */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="grid grid-2 reveal" style={{ alignItems: 'center', gap: '48px' }}>
-            <div>
-              <span className="eyebrow">Technical Domains &amp; Core Pillars</span>
-              <h2 style={{ marginBottom: '20px' }}>Empowering Innovation</h2>
-              <div className="title-rule" style={{ marginBottom: '24px' }}></div>
-              <p className="lead" style={{ marginBottom: '24px' }}>
-                Transition-X brings together industry and academia by addressing real-world challenges across five key technology and engineering domains. The competition encourages innovation, interdisciplinary collaboration, and practical problem-solving through industry-driven projects.
-              </p>
-              
-            </div>
-            
-            <div className="card" style={{ padding: '36px' }}>
-              <h3 style={{ fontSize: '1.4rem', marginBottom: '24px', color: 'var(--lavender)' }}>Core Competition Domains</h3>
-              <ul style={{ listStyle: 'none', display: 'grid', gap: '20px' }}>
-                {[
-                  { icon: '💻', text: 'Digital Systems & Software' },
-                  { icon: '🤖', text: 'AI, Data & Cyber Technologies' },
-                  { icon: '🔌', text: 'Robotics & Embedded Systems' },
-                  { icon: '🏭', text: 'Smart Manufacturing & Industrial Automation' },
-                  { icon: '🏗️', text: 'Civil Engineering & Smart Infrastructure' }
-                ].map((dom, idx) => (
-                  <li key={idx} style={{ display: 'flex', gap: '16px', alignItems: 'center', fontSize: '1.15rem', fontWeight: 600 }}>
-                    <span style={{ fontSize: '1.6rem' }}>{dom.icon}</span>
-                    <span>{dom.text}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
@@ -251,7 +376,7 @@ export default function Home() {
                   <LinkedInIcon style={{ width: '28px', height: '28px' }} />
                 </div>
               </a>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>IEEE SB SLIIT LinkedIn</h3>
+              <h3>IEEE SB SLIIT LinkedIn</h3>
               <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
                 Connect with the IEEE Student Branch of SLIIT for professional updates and networking.
               </p>
@@ -278,7 +403,7 @@ export default function Home() {
                   <LinkedInIcon style={{ width: '28px', height: '28px' }} />
                 </div>
               </a>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>IEEE SB CUC LinkedIn</h3>
+              <h3>IEEE SB CUC LinkedIn</h3>
               <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
                 Connect with the IEEE Student Branch of Curtin University Colombo for industry news.
               </p>
@@ -291,22 +416,6 @@ export default function Home() {
               >
                 Connect on LinkedIn
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CTA BAND ===== */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="cta-band reveal">
-            <h2>Three Phases. One Transition.</h2>
-            <p>From company engagement to the final Buildathon — every step is designed to make you industry-ready.</p>
-            <div className="hero-cta">
-              <Link className="btn btn-primary" href="/process">
-                See the full process <span className="arrow">→</span>
-              </Link>
-              <Link className="btn btn-ghost" href="/about">Learn more about us</Link>
             </div>
           </div>
         </div>

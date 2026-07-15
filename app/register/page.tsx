@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import useReveal from "../../hooks/useReveal"
 import { InstagramIcon, WhatsAppIcon, LinkedInIcon } from "../../components/Icons"
@@ -6,6 +7,99 @@ import { InstagramIcon, WhatsAppIcon, LinkedInIcon } from "../../components/Icon
 
 export default function Register() {
   useReveal()
+
+  const [mounted, setMounted] = useState(false)
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+  const [activeTab, setActiveTab] = useState<number | null>(null)
+
+  const toggleTab = (index: number) => {
+    setActiveTab(activeTab === index ? null : index)
+  }
+
+  const playbookItems = [
+    {
+      num: '01',
+      title: 'Who Can Join? (Eligibility)',
+      content: (
+        <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '8px', marginTop: '4px', fontSize: '0.97rem' }}>
+          <li><strong>Target Audience:</strong> Built exclusively for 3rd-year, 4th-year, and fresh graduate students ready to transition into the industry.</li>
+          <li><strong>Verification:</strong> Just have your university name, student ID, and degree details ready when you sign up so we can quickly verify your slot! Keep it accurate so we can verify your spot.</li>
+          <li><strong>Note:</strong> To ensure the right level of challenge, this program isn&apos;t open to 1st and 2nd-year students.</li>
+        </ul>
+      )
+    },
+    {
+      num: '02',
+      title: 'Build Your Team',
+      content: (
+        <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '8px', marginTop: '4px', fontSize: '0.97rem' }}>
+          <li><strong>Squad Size:</strong> Gather a team of 1 to 3 members.</li>
+          <li><strong>Mix it Up:</strong> We highly encourage cross-disciplinary and cross-university teams—diverse perspectives build the best solutions!</li>
+          <li><strong>Lock it In:</strong> You can freely adjust your team members anytime before the registration window closes on July 29, 2026.</li>
+        </ul>
+      )
+    },
+    {
+      num: '03',
+      title: 'Seamless Registration & IP',
+      content: (
+        <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '8px', marginTop: '4px', fontSize: '0.97rem' }}>
+          <li><strong>Quick Sign-up:</strong> Pick a Team Leader and have any member fill out the form accurately to lock in your domain.</li>
+          <li><strong>Your Code, Your Ownership:</strong> Your intellectual property stays 100% yours. IEEE will never claim ownership of your work. If an industry partner wants to commercialize your solution, they&apos;ll negotiate a separate agreement directly with your team.</li>
+          <li><strong>Showcasing Success:</strong> By entering, you give us the green light to highlight your team&apos;s journey and photos on our official channels!</li>
+        </ul>
+      )
+    },
+    {
+      num: '04',
+      title: 'Collaborative Spirit (Conduct)',
+      content: (
+        <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '8px', marginTop: '4px', fontSize: '0.97rem' }}>
+          <li><strong>Respect the Community:</strong> TransitionX thrives on mutual respect. We maintain a friendly, inclusive, and professional environment for all participants, mentors, and industry experts.</li>
+          <li><strong>Play Fair:</strong> Following organizer instructions ensures a smooth, high-value experience for every team involved.</li>
+        </ul>
+      )
+    },
+    {
+      num: '05',
+      title: 'Stay Committed',
+      content: (
+        <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '8px', marginTop: '4px', fontSize: '0.97rem' }}>
+          <li><strong>Value Your Slot:</strong> With slots strictly capped at 15 per domain, every spot is highly valuable. If your team absolutely must withdraw, please drop us a written note early so we can pass the opportunity to a waitlisted team.</li>
+          <li><strong>Reliability Matters (Commitment &amp; Reliability):</strong> Backing out after the deadline without notice impacts the program flow and may limit your eligibility for future IEEE events (excepting medical or personal emergencies, of course!).</li>
+        </ul>
+      )
+    }
+  ];
+
+  useEffect(() => {
+    setMounted(true)
+    const targetDate = new Date('2026-07-29T23:59:59').getTime()
+
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime()
+      const difference = targetDate - now
+
+      if (difference <= 0) {
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+      }
+
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((difference % (1000 * 60)) / 1000),
+      }
+    }
+
+    setTimeLeft(calculateTimeLeft())
+
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft())
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <main style={{ paddingTop: '80px' }}>
@@ -18,8 +112,28 @@ export default function Register() {
             <h2>Secure Your Team&apos;s Spot.</h2>
             <div className="title-rule"></div>
             <p className="lead" style={{ marginTop: '20px' }}>
-              Please review all instructions carefully before starting your application. With only <strong className="accent-text">25 team slots available</strong>, spaces are highly competitive, and incomplete or incorrect submissions will not be reviewed.
+              Please review all instructions carefully before starting your application. With only <strong className="accent-text">75 team slots available</strong>, spaces are highly competitive, and incomplete or incorrect submissions will not be reviewed.
             </p>
+
+            {/* Countdown Timer */}
+            <div className="countdown-timer-wrap">
+              <div className="countdown-grid">
+                {[
+                  { label: 'Days', value: timeLeft.days },
+                  { label: 'Hours', value: timeLeft.hours },
+                  { label: 'Minutes', value: timeLeft.minutes },
+                  { label: 'Seconds', value: timeLeft.seconds }
+                ].map((item, idx) => (
+                  <div className="countdown-item" key={idx}>
+                    <span className="countdown-number">
+                      {mounted ? String(item.value).padStart(2, '0') : '00'}
+                    </span>
+                    <span className="countdown-label">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="hero-cta" style={{ marginTop: '28px' }}>
               <a
                 className="btn btn-primary"
@@ -61,105 +175,38 @@ export default function Register() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head center reveal">
-            <span className="eyebrow">Terms &amp; Guidelines</span>
-            <h2>Rules &amp; Regulations</h2>
+            <span className="eyebrow">Participation Guidelines</span>
+            <h2>The Playbook</h2>
             <div className="title-rule"></div>
           </div>
-          <div className="card reveal" style={{ maxWidth: '720px', margin: '0 auto' }}>
-            <div className="rules-list">
-              {[
-                {
-                  num: '01',
-                  title: 'Eligibility',
-                  desc: (
-                    <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '6px', marginTop: '4px' }}>
-                      <li>Open to 3rd year, 4th year, and fresh graduate students only.</li>
-                      <li>1st and 2nd year students are not eligible.</li>
-                      <li>You must provide valid academic details: university name, registration number, student/faculty ID, and degree program.</li>
-                      <li>The Organizing Committee may verify your eligibility.</li>
-                    </ul>
-                  )
-                },
-                {
-                  num: '02',
-                  title: 'Team Formation',
-                  desc: (
-                    <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '6px', marginTop: '4px' }}>
-                      <li>Teams must have a minimum of 1 and a maximum of 3 members.</li>
-                      <li>Each participant may only be in one team.</li>
-                      <li>Cross-disciplinary and cross-university teams are strongly encouraged.</li>
-                      <li>Team changes are only allowed during the registration period: <strong>29 June – 13 July 2026</strong>.</li>
-                      <li>No changes will be accepted after the registration period closes.</li>
-                    </ul>
-                  )
-                },
-                {
-                  num: '03',
-                  title: 'Registration',
-                  desc: (
-                    <>
-                      <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '6px', marginTop: '4px' }}>
-                        <li>The Team Leader must be identified at the time of registration.</li>
-                        <li>Any team member may submit the form on behalf of the team.</li>
-                        <li>All registration details must be accurate. False or incomplete information may lead to disqualification.</li>
-                        <li>By registering, you consent to IEEE and the Organizing Committee using your team&apos;s name, photos, and submitted work for promotional purposes across official channels.</li>
-                      </ul>
-                      <p style={{ marginTop: '10px', fontStyle: 'italic', color: 'var(--lavender)' }}>
-                        Your intellectual property remains yours. Commercial use of your solution requires your written consent.
-                      </p>
-                    </>
-                  )
-                },
-                {
-                  num: '04',
-                  title: 'Professional Conduct',
-                  desc: (
-                    <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '6px', marginTop: '4px' }}>
-                      <li>Treat all participants, organizers, mentors, judges, and company representatives with respect.</li>
-                      <li>Harassment, discrimination, abusive language, or disruptive behavior will not be tolerated.</li>
-                      <li>Follow all instructions issued by the Organizing Committee.</li>
-                      <li>Misconduct may result in warnings, disqualification, or removal from the event.</li>
-                    </ul>
-                  )
-                },
-                {
-                  num: '05',
-                  title: 'Withdrawal & Penalties',
-                  desc: (
-                    <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '6px', marginTop: '4px' }}>
-                      <li>If your team wishes to withdraw, notify the Organizing Committee in writing as soon as possible.</li>
-                      <li>Withdrawing after the registration deadline without notice may result in:
-                        <div style={{ margin: '8px 0', paddingLeft: '12px', borderLeft: '2px solid var(--lavender)', color: 'var(--white)' }}>
-                          Disqualification &middot; Suspension from future IEEE events
-                        </div>
-                      </li>
-                      <li>Penalties may be waived in exceptional cases such as documented medical emergencies.</li>
-                    </ul>
-                  )
-                },
-                {
-                  num: '06',
-                  title: 'Intellectual Property',
-                  desc: (
-                    <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '6px', marginTop: '4px' }}>
-                      <li>All solutions developed during the competition belong to your team.</li>
-                      <li>The Organizing Committee and IEEE will not claim ownership of your work.</li>
-                      <li>If a company wishes to use or commercialize your solution, a separate agreement must be made directly with your team.</li>
-                    </ul>
-                  )
-                }
-              ].map((step, i) => (
-                <div key={i} className="rules-item">
-                  <div className="rules-badge">
-                    {step.num}
+          
+          <div style={{ maxWidth: '720px', margin: '0 auto', display: 'grid', gap: '16px' }} className="reveal">
+            {playbookItems.map((item, idx) => {
+              const isOpen = activeTab === idx;
+              return (
+                <div 
+                  key={idx} 
+                  className={`card playbook-card ${isOpen ? 'open' : ''}`}
+                  style={{ padding: '0', cursor: 'pointer', overflow: 'hidden' }}
+                  onClick={() => toggleTab(idx)}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '24px 30px', gap: '12px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+                      <span className="playbook-num">{item.num}</span>
+                      <h3 style={{ fontSize: '1.2rem', margin: 0, fontWeight: 700 }}>{item.title}</h3>
+                    </div>
+                    <span className="playbook-toggle-icon" style={{ fontSize: '1.4rem', fontWeight: 600, color: 'var(--lavender)', transition: 'transform 0.3s ease', transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}>
+                      ＋
+                    </span>
                   </div>
-                  <div className="rules-content">
-                    <h3>{step.title}</h3>
-                    <div className="rules-desc">{step.desc}</div>
-                  </div>
+                  {isOpen && (
+                    <div style={{ padding: '0 30px 24px 30px', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px', color: 'var(--ink-soft)' }} onClick={(e) => e.stopPropagation()}>
+                      {item.content}
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -199,12 +246,12 @@ export default function Register() {
               Follow our official social media channels for direct announcements, behind-the-scenes content, and real-time updates.
             </p>
           </div>
-          
+
           <div className="grid grid-2" style={{ maxWidth: '960px', margin: '0 auto', gap: '20px' }}>
             <div className="card reveal d1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
-              <a 
-                href="https://instagram.com/transitionx.official" 
-                target="_blank" 
+              <a
+                href="https://instagram.com/transitionx.official"
+                target="_blank"
                 rel="noopener noreferrer"
                 style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
                 className="hover-scale"
@@ -217,10 +264,10 @@ export default function Register() {
               <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
                 Follow us on Instagram for live stories, highlights, and participant spotlights.
               </p>
-              <a 
-                href="https://instagram.com/transitionx.official" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://instagram.com/transitionx.official"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-ghost"
                 style={{ fontSize: '0.95rem', padding: '10px 24px' }}
               >
@@ -229,9 +276,9 @@ export default function Register() {
             </div>
 
             <div className="card reveal d2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
-              <a 
-                href="https://whatsapp.com/channel/0029VbCw8fD5fM5dbMtn8S19" 
-                target="_blank" 
+              <a
+                href="https://whatsapp.com/channel/0029VbCw8fD5fM5dbMtn8S19"
+                target="_blank"
                 rel="noopener noreferrer"
                 style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
                 className="hover-scale"
@@ -244,10 +291,10 @@ export default function Register() {
               <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
                 Join our official WhatsApp channel for direct alerts, schedule announcements, and links.
               </p>
-              <a 
-                href="https://whatsapp.com/channel/0029VbCw8fD5fM5dbMtn8S19" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://whatsapp.com/channel/0029VbCw8fD5fM5dbMtn8S19"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary"
                 style={{ fontSize: '0.95rem', padding: '10px 24px' }}
               >
@@ -256,9 +303,9 @@ export default function Register() {
             </div>
 
             <div className="card reveal d3" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
-              <a 
-                href="https://www.linkedin.com/company/ieee-student-branch-of-sliit/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/company/ieee-student-branch-of-sliit/"
+                target="_blank"
                 rel="noopener noreferrer"
                 style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
                 className="hover-scale"
@@ -271,10 +318,10 @@ export default function Register() {
               <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
                 Connect with the IEEE Student Branch of SLIIT for professional updates and networking.
               </p>
-              <a 
-                href="https://www.linkedin.com/company/ieee-student-branch-of-sliit/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.linkedin.com/company/ieee-student-branch-of-sliit/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-ghost"
                 style={{ fontSize: '0.95rem', padding: '10px 24px' }}
               >
@@ -283,9 +330,9 @@ export default function Register() {
             </div>
 
             <div className="card reveal d4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
-              <a 
-                href="https://www.linkedin.com/company/ieee-student-branch-of-cuc/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/company/ieee-student-branch-of-cuc/"
+                target="_blank"
                 rel="noopener noreferrer"
                 style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
                 className="hover-scale"
@@ -298,10 +345,10 @@ export default function Register() {
               <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
                 Connect with the IEEE Student Branch of Curtin University Colombo for industry news.
               </p>
-              <a 
-                href="https://www.linkedin.com/company/ieee-student-branch-of-cuc/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.linkedin.com/company/ieee-student-branch-of-cuc/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-ghost"
                 style={{ fontSize: '0.95rem', padding: '10px 24px' }}
               >

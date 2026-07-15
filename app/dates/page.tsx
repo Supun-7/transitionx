@@ -28,8 +28,8 @@ export default function Dates() {
         <div className="container">
           <div className="timeline">
             {([
-              { date: '29th June 2026', title: 'Applications Open', desc: "Registration is officially open to 3rd-year, 4th-year, and fresh graduate students across Sri Lanka! Gather your team of 1 to 3 members and step up to solve real-world industry challenges. Don't wait—spaces are highly competitive and only 25 teams will be selected to compete." },
-              { date: '13th July 2026', title: 'Applications Close', desc: "This is the final deadline to submit your team's registration. Secure your spot before the portal closes. Selected participants will be notified shortly after." },
+              { date: '29th June 2026', title: 'Applications Open', desc: "Registration is officially open to 3rd-year, 4th-year, and fresh graduate students across Sri Lanka! Gather your team of 1 to 3 members and step up to solve real-world industry challenges. Don't wait—spaces are highly competitive and only 75 teams will be selected to compete." },
+              { date: '29th July 2026', title: 'Applications Close', desc: "This is the final deadline to submit your team's registration. Secure your spot before the portal closes. Selected participants will be notified shortly after." },
               { title: 'Phase 01: Kick-off with an Online Session', desc: 'Join our informative webinar to uncover the competition structure. Following this, meet industry partners face-to-face for company introductions, challenge briefings, and problem clarification before development begins.' },
               { title: 'Phase 02: Guidance Workshops & Mentoring', desc: 'Participate in targeted support sessions and hands-on training. Submit your formal problem proposal for a progress checkpoint, and use constructive feedback from industry partners to refine your solution architecture.' },
               { title: 'Phase 03: Final Pitch & Evaluation', desc: 'Submit your final technical research and working prototypes prior to the finale. On Judgement Day, step onto the stage to present live demonstrations of your final solutions to the industry expert panels.' },
@@ -48,7 +48,14 @@ export default function Dates() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="card reveal" style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center' }}>
-            <div className="icon" style={{ margin: '0 auto 18px', fontSize: '1.4rem' }}>📅</div>
+            <div className="icon" style={{ margin: '0 auto 18px', display: 'grid', placeItems: 'center', width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(202,140,211,.12)', border: '1px solid rgba(202,140,211,.3)', color: 'var(--lavender)' }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '26px', height: '26px' }}>
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
             <h3>Dates Subject to Change</h3>
             <p style={{ marginTop: '12px' }}>
               All dates are indicative and may be adjusted. Registered participants will be

@@ -21,7 +21,7 @@ export default function Home() {
       {/* ===== FLOATING ALERT BANNER ===== */}
       <div className="alert-banner">
         <span className="alert-icon">⚡</span>
-        <span className="alert-text">Registration Deadline Extended to July 29th! </span>
+        <span className="alert-text">Registration Deadline Extended!</span>
       </div>
 
       {/* ===== HERO ===== */}
@@ -145,36 +145,36 @@ export default function Home() {
             {[
               {
                 title: 'Digital Systems & Software',
+                progressVal: 55,
+                progressText: '55%',
+                statusTag: 'Spots Available',
+                statusClass: 'tag-info'
+              },
+              {
+                title: 'AI, Data & Cyber Technologies',
+                progressVal: 80,
+                progressText: '80%',
+                statusTag: 'Filling Fast',
+                statusClass: 'tag-warning'
+              },
+              {
+                title: 'Robotics & Embedded Systems',
                 progressVal: 45,
                 progressText: '45%',
                 statusTag: 'Spots Available',
                 statusClass: 'tag-info'
               },
               {
-                title: 'AI, Data & Cyber Technologies',
-                progressVal: 60,
-                progressText: '60%',
-                statusTag: 'Filling Fast',
-                statusClass: 'tag-warning'
-              },
-              {
-                title: 'Robotics & Embedded Systems',
-                progressVal: 35,
-                progressText: '35%',
-                statusTag: 'Spots Available',
-                statusClass: 'tag-info'
-              },
-              {
                 title: 'Smart Manufacturing & Industrial Automation',
-                progressVal: 30,
-                progressText: '30%',
+                progressVal: 40,
+                progressText: '40%',
                 statusTag: 'Spots Available',
                 statusClass: 'tag-info'
               },
               {
                 title: 'Civil Engineering & Smart Infrastructure',
-                progressVal: 25,
-                progressText: '25%',
+                progressVal: 48,
+                progressText: '48%',
                 statusTag: 'Spots Available',
                 statusClass: 'tag-info'
               }

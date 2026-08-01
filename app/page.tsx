@@ -21,7 +21,7 @@ export default function Home() {
       {/* ===== FLOATING ALERT BANNER ===== */}
       <div className="alert-banner">
         <span className="alert-icon">⚡</span>
-        <span className="alert-text">Registration Deadline Extended!</span>
+        <span className="alert-text">Registration Deadline Extended to August 15th!</span>
       </div>
 
       {/* ===== HERO ===== */}

@@ -35,7 +35,7 @@ export default function Register() {
         <ul style={{ paddingLeft: '20px', listStyleType: 'disc', display: 'grid', gap: '8px', marginTop: '4px', fontSize: '0.97rem' }}>
           <li><strong>Squad Size:</strong> Gather a team of 1 to 3 members.</li>
           <li><strong>Mix it Up:</strong> We highly encourage cross-disciplinary and cross-university teams—diverse perspectives build the best solutions!</li>
-          <li><strong>Lock it In:</strong> You can freely adjust your team members anytime before the registration window closes on July 29, 2026.</li>
+          <li><strong>Lock it In:</strong> You can freely adjust your team members anytime before the registration window closes on August 15, 2026.</li>
         </ul>
       )
     },
@@ -74,7 +74,7 @@ export default function Register() {
 
   useEffect(() => {
     setMounted(true)
-    const targetDate = new Date('2026-07-29T23:59:59').getTime()
+    const targetDate = new Date('2026-08-15T23:59:59').getTime()
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime()

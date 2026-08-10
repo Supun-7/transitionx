@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import HeroScene from "../components/HeroScene"
+import DomainCountdown from "../components/DomainCountdown"
 import { InstagramIcon, WhatsAppIcon, LinkedInIcon } from "../components/Icons"
 
 export default function Home() {
@@ -75,6 +76,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== DOMAIN AVAILABILITY TRACKER & COUNTDOWN ===== */}
+      <DomainCountdown />
+
       {/* ===== WHAT IS TRANSITIONX ===== */}
       <section className="section">
         <div className="container">
@@ -125,86 +129,6 @@ export default function Home() {
                 <p>{p.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== DOMAIN AVAILABILITY TRACKER ===== */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="section-head center reveal">
-            <span className="eyebrow">Real-Time Status</span>
-            <h2>Domain Availability</h2>
-            <div className="title-rule"></div>
-            <p className="lead" style={{ marginTop: '20px' }}>
-              Monitor live registration availability across each technical track. Each domain is strictly capped at 15 teams to maintain direct mentorship quality.
-            </p>
-          </div>
-
-          <div className="tracker-section">
-            {[
-              {
-                title: 'Digital Systems & Software',
-                progressVal: 55,
-                progressText: '55%',
-                statusTag: 'Spots Available',
-                statusClass: 'tag-info'
-              },
-              {
-                title: 'AI, Data & Cyber Technologies',
-                progressVal: 80,
-                progressText: '80%',
-                statusTag: 'Filling Fast',
-                statusClass: 'tag-warning'
-              },
-              {
-                title: 'Robotics & Embedded Systems',
-                progressVal: 45,
-                progressText: '45%',
-                statusTag: 'Spots Available',
-                statusClass: 'tag-info'
-              },
-              {
-                title: 'Smart Manufacturing & Industrial Automation',
-                progressVal: 40,
-                progressText: '40%',
-                statusTag: 'Spots Available',
-                statusClass: 'tag-info'
-              },
-              {
-                title: 'Civil Engineering & Smart Infrastructure',
-                progressVal: 48,
-                progressText: '48%',
-                statusTag: 'Spots Available',
-                statusClass: 'tag-info'
-              }
-            ].map((item, idx) => (
-              <div 
-                className="tracker-card reveal" 
-                key={idx} 
-                style={{ '--progress-width': `${item.progressVal}%` } as React.CSSProperties}
-              >
-                <div className="tracker-info">
-                  <div className="tracker-header-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
-                    <span className="tracker-title">{item.title}</span>
-                    <span className={`tracker-badge ${item.statusClass}`}>{item.statusTag}</span>
-                  </div>
-                  <div className="tracker-progress-bg">
-                    <div className="tracker-progress-fill" />
-                  </div>
-                </div>
-                <div className="tracker-percentage">
-                  {item.progressText}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Secure Your Slot CTA Button */}
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '36px' }} className="reveal">
-            <Link href="/register" className="btn btn-primary" style={{ padding: '14px 32px' }}>
-              Secure Your Slot Now <span className="arrow">→</span>
-            </Link>
           </div>
         </div>
       </section>

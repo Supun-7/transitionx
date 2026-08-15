@@ -13,9 +13,9 @@ interface DomainItem {
 const DOMAIN_DATA: DomainItem[] = [
   {
     name: 'Digital Systems & Software',
-    status: '4 LEFT',
-    isFull: false,
-    fillPercent: 75,
+    status: 'FULL',
+    isFull: true,
+    fillPercent: 100,
   },
   {
     name: 'AI, Data & Cyber Technologies',
@@ -25,41 +25,45 @@ const DOMAIN_DATA: DomainItem[] = [
   },
   {
     name: 'Robotics & Embedded Systems',
-    status: '6 LEFT',
+    status: '4 LEFT',
     isFull: false,
-    fillPercent: 50,
+    fillPercent: 75,
   },
   {
     name: 'Smart Manufacturing & Industrial Automation',
-    status: '6 LEFT',
+    status: '4 LEFT',
     isFull: false,
-    fillPercent: 50,
+    fillPercent: 75,
   },
   {
     name: 'Civil Engineering & Smart Infrastructure',
-    status: '5 LEFT',
+    status: '3 LEFT',
     isFull: false,
-    fillPercent: 62,
+    fillPercent: 82,
   },
 ]
 
 export default function DomainCountdown() {
-  const [daysLeft, setDaysLeft] = useState<number | null>(null)
+  const [timeLeft, setTimeLeft] = useState<{ value: number; unit: string } | null>(null)
 
   useEffect(() => {
-    // Target date: August 15, 2026 23:59:59 IST
-    const targetDate = new Date('2026-08-15T23:59:59+05:30').getTime()
+    // Target date: August 15, 2026 21:30:00 IST (4 hours remaining)
+    const targetDate = new Date('2026-08-15T21:30:00+05:30').getTime()
 
     const updateTimer = () => {
       const now = new Date().getTime()
       const difference = targetDate - now
 
       if (difference > 0) {
-        // Calculate full 24h days remaining until deadline
-        const days = Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24)))
-        setDaysLeft(days)
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+        if (days >= 1) {
+          setTimeLeft({ value: days, unit: days === 1 ? 'DAY' : 'DAYS' })
+        } else {
+          const hours = Math.max(1, Math.ceil(difference / (1000 * 60 * 60)))
+          setTimeLeft({ value: hours, unit: hours === 1 ? 'HOUR' : 'HOURS' })
+        }
       } else {
-        setDaysLeft(0)
+        setTimeLeft({ value: 0, unit: 'HOURS' })
       }
     }
 
@@ -74,13 +78,13 @@ export default function DomainCountdown() {
         {/* ===== HERO TITLE & SUBTITLE ===== */}
         <div className="domain-header reveal">
           <h2 className="domain-main-title">
-            ONE DOWN, <span className="domain-highlight">FOUR LEFT</span>
+            TWO DOWN, <span className="domain-highlight">THREE LEFT</span>
           </h2>
           <p className="domain-subtitle">
-            AI &amp; Cyber is officially locked. Secure your remaining track
+            Slots are almost gone. Secure your remaining track now.
           </p>
           <div className="domain-pill-badge">
-            DOMAIN AVAILABILITY
+            DOMAIN AVAILABILITY UPDATE
           </div>
         </div>
 
@@ -141,8 +145,8 @@ export default function DomainCountdown() {
             {/* Right Compartment */}
             <div className="countdown-right">
               <div className="days-big">
-                <span className="num-glow">{daysLeft !== null ? daysLeft : 5}</span>
-                <span className="unit-text">{(daysLeft !== null ? daysLeft : 5) === 1 ? 'DAY' : 'DAYS'}</span>
+                <span className="num-glow">{timeLeft !== null ? timeLeft.value : 8}</span>
+                <span className="unit-text">{timeLeft !== null ? timeLeft.unit : 'HOURS'}</span>
               </div>
             </div>
           </div>

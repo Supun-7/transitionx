@@ -1145,6 +1145,20 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
   color: var(--x-cyan);
   animation: alert-flash 1.5s infinite alternate;
 }
+.alert-timer-highlight {
+  color: #22d3ee;
+  font-weight: 800;
+  background: rgba(34, 211, 238, 0.12);
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.5px;
+}
 @keyframes alert-flash {
   to { opacity: 0.5; }
 }

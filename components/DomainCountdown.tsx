@@ -47,8 +47,8 @@ export default function DomainCountdown() {
   const [timeLeft, setTimeLeft] = useState<{ value: number; unit: string } | null>(null)
 
   useEffect(() => {
-    // Target date: August 15, 2026 21:30:00 IST (4 hours remaining)
-    const targetDate = new Date('2026-08-15T21:30:00+05:30').getTime()
+    // Target date: August 15, 2026 23:59:59 SLST (Sri Lankan Time, UTC+5:30)
+    const targetDate = new Date('2026-08-15T23:59:59+05:30').getTime()
 
     const updateTimer = () => {
       const now = new Date().getTime()
@@ -68,7 +68,7 @@ export default function DomainCountdown() {
     }
 
     updateTimer()
-    const interval = setInterval(updateTimer, 60000)
+    const interval = setInterval(updateTimer, 1000)
     return () => clearInterval(interval)
   }, [])
 

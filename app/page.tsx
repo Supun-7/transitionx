@@ -19,7 +19,7 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    const targetDate = new Date('2026-08-15T21:30:00+05:30').getTime()
+    const targetDate = new Date('2026-08-15T23:59:59+05:30').getTime()
     const updateTimer = () => {
       const diff = targetDate - Date.now()
       if (diff > 0) {
@@ -30,7 +30,7 @@ export default function Home() {
       }
     }
     updateTimer()
-    const interval = setInterval(updateTimer, 60000)
+    const interval = setInterval(updateTimer, 1000)
     return () => clearInterval(interval)
   }, [])
 

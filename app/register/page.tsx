@@ -74,7 +74,7 @@ export default function Register() {
 
   useEffect(() => {
     setMounted(true)
-    const targetDate = new Date('2026-08-15T23:59:59').getTime()
+    const targetDate = new Date('2026-08-15T23:59:59+05:30').getTime()
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime()

@@ -69,7 +69,7 @@ export default function About() {
                   className="about-card-logo"
                 />
               </div>
-               <p>Sri Lanka Institute of Information Technology — one of Sri Lanka's leading technology universities, driving innovation through student-led initiatives.</p>
+               <p>Sri Lanka Institute of Information Technology — one of Sri Lanka&apos;s leading technology universities, driving innovation through student-led initiatives.</p>
             </div>
             <div className="card reveal d2" style={{ textAlign: 'center' }}>
               <div className="about-logo-wrapper">
@@ -82,7 +82,7 @@ export default function About() {
                 />
               </div>
               
-              <p>The Colombo campus of Curtin University Australia — bringing global academic standards and industry connections to Sri Lanka's engineering community.</p>
+              <p>The Colombo campus of Curtin University Australia — bringing global academic standards and industry connections to Sri Lanka&apos;s engineering community.</p>
             </div>
           </div>
         </div>

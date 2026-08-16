@@ -73,7 +73,7 @@ export default function Footer() {
                 <li><Link href="/impact">Impact</Link></li>
                 <li><Link href="/dates">Key Dates</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
-                <li><Link href="/register">Register</Link></li>
+                <li><Link href="/register">Registrations Closed</Link></li>
               </ul>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>&copy; {new Date().getFullYear()} TransitionX · IEEE Student Branches of SLIIT &amp; CUC</span>
-          <span>Built for the class that's ready to transition.</span>
+          <span>Built for the class that&apos;s ready to transition.</span>
         </div>
       </div>
 

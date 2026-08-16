@@ -1,14 +1,11 @@
 'use client'
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import HeroScene from "../components/HeroScene"
-import DomainCountdown from "../components/DomainCountdown"
 import { InstagramIcon, WhatsAppIcon, LinkedInIcon } from "../components/Icons"
 
 export default function Home() {
-  const [hoursLeft, setHoursLeft] = useState<number>(4)
-
   useEffect(() => {
     const reveals = document.querySelectorAll('.reveal')
     const observer = new IntersectionObserver((entries) => {
@@ -18,22 +15,6 @@ export default function Home() {
     return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    const targetDate = new Date('2026-08-15T23:59:59+05:30').getTime()
-    const updateTimer = () => {
-      const diff = targetDate - Date.now()
-      if (diff > 0) {
-        const hours = Math.max(1, Math.ceil(diff / (1000 * 60 * 60)))
-        setHoursLeft(hours)
-      } else {
-        setHoursLeft(0)
-      }
-    }
-    updateTimer()
-    const interval = setInterval(updateTimer, 1000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <main style={{ paddingTop: '80px' }}>
 
@@ -41,7 +22,10 @@ export default function Home() {
       <div className="alert-banner">
         <span className="alert-icon">⚡</span>
         <span className="alert-text">
-          Registration Deadline <span className="alert-timer-highlight">{hoursLeft} {hoursLeft === 1 ? 'Hour' : 'Hours'} Remaining</span>
+          <strong className="alert-timer-highlight" style={{ marginRight: '8px' }}>
+            REGISTRATIONS ARE NOW OFFICIALLY CLOSED
+          </strong>
+          THE REAL CHALLENGE BEGINS NOW!
         </span>
       </div>
 
@@ -95,9 +79,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ===== DOMAIN AVAILABILITY TRACKER & COUNTDOWN ===== */}
-      <DomainCountdown />
 
       {/* ===== WHAT IS TRANSITIONX ===== */}
       <section className="section">
@@ -225,7 +206,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3>Vision</h3>
-              <p>To be the definitive bridge between Sri Lanka's engineering academia and industry — producing graduates who don't just enter the workforce, but transform it.</p>
+              <p>To be the definitive bridge between Sri Lanka&apos;s engineering academia and industry — producing graduates who don&apos;t just enter the workforce, but transform it.</p>
             </div>
             <div className="card reveal d2">
               <div className="icon">

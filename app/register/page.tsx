@@ -1,6 +1,6 @@
 'use client'
-import { useState, useEffect } from "react"
-import Image from "next/image"
+import { useState } from "react"
+import Link from "next/link"
 import useReveal from "../../hooks/useReveal"
 import { InstagramIcon, WhatsAppIcon, LinkedInIcon } from "../../components/Icons"
 
@@ -8,8 +8,6 @@ import { InstagramIcon, WhatsAppIcon, LinkedInIcon } from "../../components/Icon
 export default function Register() {
   useReveal()
 
-  const [mounted, setMounted] = useState(false)
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
   const [activeTab, setActiveTab] = useState<number | null>(null)
 
   const toggleTab = (index: number) => {
@@ -72,35 +70,6 @@ export default function Register() {
     }
   ];
 
-  useEffect(() => {
-    setMounted(true)
-    const targetDate = new Date('2026-08-15T23:59:59+05:30').getTime()
-
-    const calculateTimeLeft = () => {
-      const now = new Date().getTime()
-      const difference = targetDate - now
-
-      if (difference <= 0) {
-        return { days: 0, hours: 0, minutes: 0, seconds: 0 }
-      }
-
-      return {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((difference % (1000 * 60)) / 1000),
-      }
-    }
-
-    setTimeLeft(calculateTimeLeft())
-
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
-
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <main style={{ paddingTop: '80px' }}>
 
@@ -108,42 +77,31 @@ export default function Register() {
       <section className="section">
         <div className="container">
           <div className="section-head center reveal">
-            <span className="eyebrow">Register</span>
-            <h2>Secure Your Team&apos;s Spot.</h2>
+            <span className="eyebrow">REGISTRATIONS CLOSED</span>
+            <h2>REGISTRATIONS ARE NOW OFFICIALLY CLOSED</h2>
             <div className="title-rule"></div>
-            <p className="lead" style={{ marginTop: '20px' }}>
-              Please review all instructions carefully before starting your application. With only <strong className="accent-text">75 team slots available</strong>, spaces are highly competitive, and incomplete or incorrect submissions will not be reviewed.
+            <p className="lead" style={{ marginTop: '20px', fontWeight: 700, color: 'var(--white)', fontSize: '1.3rem' }}>
+              THE REAL CHALLENGE BEGINS NOW!
+            </p>
+            <p style={{ marginTop: '12px', color: 'var(--ink-soft)', fontSize: '1rem', maxWidth: '600px', margin: '12px auto 0' }}>
+              Have inquiries or need to reach out to the organizing committee? Feel free to contact us through our contact page.
             </p>
 
-            {/* Countdown Timer */}
-            <div className="countdown-timer-wrap">
-              <div className="countdown-grid">
-                {[
-                  { label: 'Days', value: timeLeft.days },
-                  { label: 'Hours', value: timeLeft.hours },
-                  { label: 'Minutes', value: timeLeft.minutes },
-                  { label: 'Seconds', value: timeLeft.seconds }
-                ].map((item, idx) => (
-                  <div className="countdown-item" key={idx}>
-                    <span className="countdown-number">
-                      {mounted ? String(item.value).padStart(2, '0') : '00'}
-                    </span>
-                    <span className="countdown-label">{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="hero-cta" style={{ marginTop: '28px' }}>
-              <a
+            <div className="hero-cta" style={{ marginTop: '28px', gap: '16px', flexWrap: 'wrap' }}>
+              <Link
                 className="btn btn-primary"
-                href="https://forms.gle/rUxKqfu6AumZiqQ48"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontSize: '1.1rem', padding: '16px 36px' }}
+                href="/contact"
+                style={{ fontSize: '1.05rem', padding: '14px 32px' }}
               >
-                Register Now <span className="arrow">→</span>
-              </a>
+                Contact Organizing Committee <span className="arrow">→</span>
+              </Link>
+              <Link
+                className="btn btn-ghost"
+                href="/process"
+                style={{ fontSize: '1.05rem', padding: '14px 32px' }}
+              >
+                Explore the Process
+              </Link>
             </div>
           </div>
         </div>
@@ -277,22 +235,29 @@ export default function Register() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="cta-band reveal" style={{ textAlign: 'center' }}>
-            <h2>Ready to Register?</h2>
-            <p>Make sure you have read all rules and instructions carefully before proceeding.</p>
-            <div style={{ marginTop: '28px' }}>
-              <a
-                className="btn btn-primary"
-                href="https://forms.gle/rUxKqfu6AumZiqQ48"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontSize: '1.1rem', padding: '16px 36px' }}
-              >
-                Register Now <span className="arrow">→</span>
-              </a>
-            </div>
-            <p style={{ marginTop: '16px', color: 'var(--ink-faint)', fontSize: '0.88rem' }}>
-              You will be redirected to our official Google Form.
+            <h2>Registrations Are Now Closed</h2>
+            <p style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--white)', marginTop: '8px' }}>
+              REGISTRATIONS ARE NOW OFFICIALLY CLOSED THE REAL CHALLENGE BEGINS NOW!
             </p>
+            <p style={{ marginTop: '12px', color: 'var(--ink-soft)', fontSize: '0.98rem' }}>
+              To get in touch with the organizing committee, please visit our contact page.
+            </p>
+            <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              <Link
+                className="btn btn-primary"
+                href="/contact"
+                style={{ fontSize: '1.05rem', padding: '14px 32px' }}
+              >
+                Contact Organizing Committee <span className="arrow">→</span>
+              </Link>
+              <Link
+                className="btn btn-ghost"
+                href="/process"
+                style={{ fontSize: '1.05rem', padding: '14px 32px' }}
+              >
+                Explore the Process
+              </Link>
+            </div>
           </div>
         </div>
       </section>

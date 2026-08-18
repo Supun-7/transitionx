@@ -18,17 +18,6 @@ export default function Home() {
   return (
     <main style={{ paddingTop: '80px' }}>
 
-      {/* ===== FLOATING ALERT BANNER ===== */}
-      <div className="alert-banner">
-        <span className="alert-icon">⚡</span>
-        <span className="alert-text">
-          <strong className="alert-timer-highlight" style={{ marginRight: '8px' }}>
-            REGISTRATIONS ARE NOW OFFICIALLY CLOSED
-          </strong>
-          THE REAL CHALLENGE BEGINS NOW!
-        </span>
-      </div>
-
       {/* ===== HERO ===== */}
       <section className="hero-stage">
         <HeroScene />
@@ -111,7 +100,7 @@ export default function Home() {
               {
                 phase: 'PHASE 01',
                 title: 'Initial Stage',
-                desc: 'Webinar kick-off, company briefings, problem distribution, and team validation. Get matched with your core track.'
+                desc: 'Kick-off webinar (19th Aug 7:00 PM), company briefings, problem distribution, and team validation. Get matched with your core track.'
               },
               {
                 phase: 'PHASE 02',

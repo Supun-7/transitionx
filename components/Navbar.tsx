@@ -30,7 +30,7 @@ export default function Navbar() {
                 <li><Link href="/impact">Impact</Link></li>
                 <li><Link href="/dates">Key Dates</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
-                <li className="nav-register"><Link href="/register">Register</Link></li>
+                <li className="nav-register"><Link href="/register">Registrations Closed</Link></li>
                 </ul>
             </nav>
         </div>

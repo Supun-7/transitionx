@@ -17,7 +17,7 @@ export default function Dates() {
             <div className="title-rule"></div>
             <p className="lead" style={{ marginTop: '20px' }}>
               TransitionX 2026 runs across a structured timeline. Every date is a milestone
-              — don't miss a single one.
+              — don&apos;t miss a single one.
             </p>
           </div>
         </div>
@@ -69,13 +69,18 @@ export default function Dates() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="cta-band reveal">
-            <h2>Don&apos;t Miss Your Window.</h2>
-            <p>Applications are now open. Secure your spot before they close</p>
+            <h2>Registrations Closed</h2>
+            <p style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--white)', marginTop: '8px' }}>
+              REGISTRATIONS ARE NOW OFFICIALLY CLOSED THE REAL CHALLENGE BEGINS NOW!
+            </p>
+            <p style={{ marginTop: '12px', color: 'var(--ink-soft)', fontSize: '0.98rem' }}>
+              For any inquiries or to reach out to the organizing committee, please visit our contact page.
+            </p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="https://forms.gle/rUxKqfu6AumZiqQ48" target="_blank" rel="noopener noreferrer">
-                Register now <span className="arrow">→</span>
-              </a>
-              <Link className="btn btn-ghost" href="/contact">Have a question?</Link>
+              <Link className="btn btn-primary" href="/contact">
+                Contact Organizing Committee <span className="arrow">→</span>
+              </Link>
+              <Link className="btn btn-ghost" href="/process">Explore the Process</Link>
             </div>
           </div>
         </div>

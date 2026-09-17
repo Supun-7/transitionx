@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function Rootlayout({children}: {children: React.ReactNode}) {
   return(
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NNVYZZEH5D"
@@ -32,7 +32,7 @@ export default function Rootlayout({children}: {children: React.ReactNode}) {
           `}
         </Script>
       </head>
-      <body className={`${rajdhani.className}`}>
+      <body className={`${rajdhani.className}`} suppressHydrationWarning>
         <div className="bg-grid" />
         <Navbar/>
         {children}

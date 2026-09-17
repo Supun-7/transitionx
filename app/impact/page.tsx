@@ -27,7 +27,7 @@ export default function Impact() {
         <div className="container">
           <div className="stats reveal">
             <div className="stat">
-              <div className="num">25</div>
+              <div className="num">75</div>
               <div className="label">Selected Teams</div>
             </div>
             <div className="stat">

@@ -28,10 +28,9 @@ export default function Dates() {
         <div className="container">
           <div className="timeline">
             {([
-              { date: '29th June 2026', title: 'Applications Open', desc: "Registration opened to 3rd-year, 4th-year, and fresh graduate students across Sri Lanka to solve real-world industry challenges." },
-              { date: '15th August 2026', title: 'Applications Closed', desc: "Official registrations closed on 15th August 2026. Selected teams are preparing for the upcoming competition phases, while optional late sign-ups may still be considered." },
-              { date: '19th August 2026 | 7:00 PM', title: 'Kick-off Webinar', desc: "Join our official online kick-off webinar at 7:00 PM to uncover the competition structure, guidelines, track details, and program expectations before development begins." },
-              { title: 'Phase 01: Kick-off & Industry Briefings', desc: 'Following the webinar, meet industry partners face-to-face for company introductions, challenge briefings, and problem clarification before development begins.' },
+              { date: '29th June 2026', title: 'Applications Open', desc: "Registration is officially open to 3rd-year, 4th-year, and fresh graduate students across Sri Lanka! Gather your team of 1 to 3 members and step up to solve real-world industry challenges. Don't wait—spaces are highly competitive and only 75 teams will be selected to compete." },
+              { date: '15th August 2026', title: 'Applications Close', desc: "This is the final deadline to submit your team's registration. Secure your spot before the portal closes. Selected participants will be notified shortly after." },
+              { title: 'Phase 01: Kick-off with an Online Session', desc: 'Join our informative webinar to uncover the competition structure. Following this, meet industry partners face-to-face for company introductions, challenge briefings, and problem clarification before development begins.' },
               { title: 'Phase 02: Guidance Workshops & Mentoring', desc: 'Participate in targeted support sessions and hands-on training. Submit your formal problem proposal for a progress checkpoint, and use constructive feedback from industry partners to refine your solution architecture.' },
               { title: 'Phase 03: Final Pitch & Evaluation', desc: 'Submit your final technical research and working prototypes prior to the finale. On Judgement Day, step onto the stage to present live demonstrations of your final solutions to the industry expert panels.' },
             ] as Array<{ date?: string; title: string; desc: string }>).map((item, i) => (

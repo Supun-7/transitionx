@@ -1542,7 +1542,7 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
 .hero-brand-title-3d {
   position: relative;
   display: inline-block;
-  font-size: clamp(4.2rem, 11.5vw, 8.8rem);
+  font-size: clamp(3.6rem, 11.5vw, 8.8rem);
   font-weight: 900;
   line-height: 1;
   letter-spacing: 4px;

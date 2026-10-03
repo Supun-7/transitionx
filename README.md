@@ -67,12 +67,20 @@ transitionx/
 │   ├── impact/page.tsx         # /impact
 │   ├── dates/page.tsx          # /dates
 │   ├── contact/page.tsx        # /contact
-│   └── register/page.tsx       # /register
 │
 ├── 📁 components/
-│   ├── Navbar.tsx              # Floating glassmorphism navbar
-│   ├── Footer.tsx              # Footer with shine wordmark animation
-│   └── HeroScene.tsx           # Canvas particle network background
+│   ├── shared/                 # Used across every page
+│   │   ├── Navbar.tsx          # Floating glassmorphism navbar
+│   │   ├── Footer.tsx          # Footer with shine wordmark animation
+│   │   └── Icons.tsx           # Inline SVG icons
+│   ├── home/                   # Home page only
+│   │   ├── HeroJungle.tsx      # Three.js jungle hero scene
+│   │   ├── HeroOverlay.tsx     # Hero copy and CTAs
+│   │   ├── Phase04Showcase.tsx
+│   │   ├── Phase04Award.tsx
+│   │   └── PhotoMarquee.tsx    # Scrolling photo marquee
+│   └── about/                  # About page only
+│       └── AboutCity.tsx       # Three.js neon city scene
 │
 ├── 📁 hooks/
 │   └── useReveal.ts            # Custom scroll reveal hook

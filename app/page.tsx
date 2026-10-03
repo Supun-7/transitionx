@@ -1,342 +1,153 @@
 'use client'
-import { useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import HeroScene from "../components/HeroScene"
-import { InstagramIcon, WhatsAppIcon, LinkedInIcon } from "../components/Icons"
+import { HeroJungle, HeroOverlay, Phase04Showcase, Phase04Award, PhotoMarquee } from "@/components/home"
+import useReveal from "@/hooks/useReveal"
+
+const PHASE_02_PHOTOS = 9
+const PHASE_03_PHOTOS = 8
 
 export default function Home() {
-  useEffect(() => {
-    const reveals = document.querySelectorAll('.reveal')
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') })
-    }, { threshold: 0.15 })
-    reveals.forEach(r => observer.observe(r))
-    return () => observer.disconnect()
-  }, [])
+  useReveal()
 
   return (
     <main style={{ paddingTop: '80px' }}>
 
-      {/* ===== FLOATING ALERT BANNER ===== */}
-      <div className="alert-banner">
-        <span className="alert-icon">⚡</span>
-        <span className="alert-text">Registration Deadline Extended to August 15th!</span>
-      </div>
-
       {/* ===== HERO ===== */}
       <section className="hero-stage">
-        <HeroScene />
-        <div className="geo-wrap">
-          <div className="geo">
-            <div className="geo-face" /><div className="geo-face" />
-            <div className="geo-face" /><div className="geo-face" />
-            <div className="geo-face" /><div className="geo-face" />
-            <div className="geo-ring" /><div className="geo-ring" />
-            <div className="geo-ring" />
-          </div>
-        </div>
-        <div className="spotlight spotlight-left" />
-        <div className="spotlight spotlight-right" />
-        <div className="hero-content">
-          <div className="hero-logos-container hero-eyebrow">
-            <Image
-              src="/sliitlogo.png"
-              alt="SLIIT Logo"
-              width={190}
-              height={28}
-              className="hero-logo-img"
-              priority
-            />
-            <span className="logo-divider"></span>
-            <Image
-              src="/curtin logo.png"
-              alt="Curtin University Colombo Logo"
-              width={204}
-              height={28}
-              className="hero-logo-img"
-              priority
-            />
-          </div>
-          <h1 className="hero-tagline">
-            Real <span className="idea">Industry Challenges.</span>
-            <span className="stage">We set the STAGE.</span>
-          </h1>
-          <p className="hero-lead lead">
-            A flagship initiative by the IEEE Student Branches of SLIIT and Curtin University Colombo,
-            built to help 3rd/4th-year students and fresh graduates turn academic knowledge into real, hands-on industry experience.
-          </p>
-          <div className="hero-cta-wrap hero-cta">
-            <Link className="btn btn-primary" href="/process">
-              Explore the process <span className="arrow">→</span>
-            </Link>
-            <Link className="btn btn-ghost" href="/dates">See key dates</Link>
-          </div>
-        </div>
+        <HeroJungle />
+        <HeroOverlay />
       </section>
 
-      {/* ===== WHAT IS TRANSITIONX ===== */}
-      <section className="section">
-        <div className="container">
-          <div className="section-head center reveal">
-            <span className="eyebrow">What is TransitionX</span>
-            <h2>Bridging the Gap Between Academia &amp; Industry</h2>
-            <div className="title-rule"></div>
-            <p className="lead" style={{ marginTop: '20px' }}>
-              TransitionX is a structured industry transition programme designed for 3rd/4th-year students and fresh graduates. It connects graduating talent with real company challenges through workshops, mentorship, and a final Industry Buildathon — creating engineers who are truly industry-ready from day one.
-            </p>
-          </div>
+      {/* ===== CURRENT STAGE ===== */}
+      <section className="section current-stage-section">
+        <div className="current-stage-backdrop" aria-hidden="true">
+          <PhotoMarquee dir="/industry-visits" count={PHASE_03_PHOTOS} label="TransitionX industry visit" />
         </div>
-      </section>
 
-      {/* ===== ROADMAP: THREE PHASES ===== */}
-      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="current-stage-wash" aria-hidden="true" />
+
+        <div className="current-stage-scrim" aria-hidden="true" />
+
         <div className="container">
-          <div className="section-head center reveal">
-            <span className="eyebrow">The Journey</span>
-            <h2>Three Phases. One Transition.</h2>
+          <div className="current-stage-copy">
+          <div className="current-stage-head reveal">
+            <span className="eyebrow">Current Stage</span>
+            <h2>
+              <span className="stage-03-phase">Phase 03</span>
+              <span className="stage-03-title">Solution Development</span>
+            </h2>
             <div className="title-rule"></div>
-            <p className="lead" style={{ marginTop: '20px' }}>
-              TransitionX takes you through a structured pathway designed to transform academic learning into industry success.
+            <p className="lead">
+              Industry engagement and solution development, running as one stage. Every
+              project starts inside a partner company — walking their floors, watching
+              live systems, understanding the real problem, then engineering the system
+              that answers it.
             </p>
           </div>
 
-          <div className="home-phases-grid reveal">
+          <div className="current-stage-steps reveal d1">
             {[
-              {
-                phase: 'PHASE 01',
-                title: 'Initial Stage',
-                desc: 'Kick-off webinar (19th Aug 7:00 PM), company briefings, problem distribution, and team validation. Get matched with your core track.'
-              },
-              {
-                phase: 'PHASE 02',
-                title: 'Workshops & Mentoring',
-                desc: 'Targeted support sessions, hands-on training, mentor reviews, and feedback checkpoints to design your solution architecture.'
-              },
-              {
-                phase: 'PHASE 03',
-                title: 'Final Pitch & Evaluation',
-                desc: 'Submit technical research, deploy working prototypes, and deliver live solution presentations to industry expert panels.'
-              }
-            ].map((p, i) => (
-              <div className="card home-phase-card" key={i} style={{ padding: '28px' }}>
-                <span className="home-phase-tag">{p.phase}</span>
-                <h3>{p.title}</h3>
-                <p>{p.desc}</p>
+              { index: '01', label: 'Industry visit', desc: 'On-site immersion inside a partner company.' },
+              { index: '02', label: 'Understand the problem', desc: 'Requirements shaped with engineers and mentors.' },
+              { index: '03', label: 'Develop the solution', desc: 'Modular components integrated into one deployable system.' },
+            ].map(item => (
+              <div className="current-stage-step" key={item.index}>
+                <span className="current-stage-index">{item.index}</span>
+                <h3>{item.label}</h3>
+                <p>{item.desc}</p>
               </div>
             ))}
           </div>
+          </div>
         </div>
       </section>
 
-      {/* ===== TRACK DETAILS ===== */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      {/* ===== PHASE 02: COMPLETED ===== */}
+      <section className="section stage-section stage-section--02">
+        <div className="stage-backdrop" aria-hidden="true">
+          <PhotoMarquee dir="/phase-02" stem="2_" count={PHASE_02_PHOTOS} label="TransitionX workshop session" />
+        </div>
+
+        <div className="stage-wash" aria-hidden="true" />
+
+        <div className="stage-scrim" aria-hidden="true" />
+
         <div className="container">
-          <div className="section-head center reveal">
-            <span className="eyebrow">Track Details</span>
-            <h2>What Each Domain Entails</h2>
+          <div className="stage-copy">
+          <div className="stage-head reveal">
+            <span className="eyebrow">Completed Stage</span>
+            <h2>
+              <span className="stage-phase">Phase 02</span>
+              <span className="stage-title">Workshops &amp; Mentoring</span>
+            </h2>
             <div className="title-rule"></div>
-            <p className="lead" style={{ marginTop: '20px' }}>
-              Understand the core technical focus, scope, and tools utilized across each competition track.
+            <p className="lead">
+              Before a line of code gets written, the thinking gets shaped. Targeted
+              sessions, hands-on training, and mentor reviews turn a raw brief into a
+              solution architecture a team can actually build.
             </p>
           </div>
 
-          <div className="grid grid-3 reveal">
+          <div className="stage-steps reveal d1">
             {[
-              {
-                title: 'Digital Systems & Software',
-                desc: 'Focuses on modern software architectures, cloud deployments, API integrations, and robust web applications.',
-                tech: 'React · Node.js · TypeScript · AWS / Azure · PostgreSQL'
-              },
-              {
-                title: 'AI, Data & Cyber Technologies',
-                desc: 'Covers machine learning pipelines, LLM fine-tuning, big data analytics, threat detection, and system compliance.',
-                tech: 'Python · PyTorch · Docker · Kubernetes · LangChain'
-              },
-              {
-                title: 'Robotics & Embedded Systems',
-                desc: 'Integrates microcontrollers, sensors, communication protocols, actuators, and hardware control.',
-                tech: 'C++ · RTOS · ESP32 · STM32 · ROS · I2C / SPI'
-              },
-              {
-                title: 'Smart Manufacturing & Industrial Automation',
-                desc: 'Explores industrial IoT gateways, SCADA systems, PLCs, automated telemetry, and factory networking.',
-                tech: 'Modbus · OPC UA · Siemens TIA Portal · Node-RED'
-              },
-              {
-                title: 'Civil Engineering & Smart Infrastructure',
-                desc: 'Applies smart structural health monitoring, BIM integrations, geographic information systems, and materials data.',
-                tech: 'BIM / Revit · GIS · Sensor networks · Structural Analysis'
-              }
-            ].map((track, i) => (
-              <div className="card" key={i} style={{ display: 'flex', flexDirection: 'column', padding: '28px' }}>
-                <div style={{ flexGrow: 1 }}>
-                  <h3 style={{ fontSize: '1.25rem', marginBottom: '12px', color: 'var(--white)' }}>{track.title}</h3>
-                  <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '24px' }}>{track.desc}</p>
-                </div>
-                <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--x-cyan)', letterSpacing: '1px', textTransform: 'uppercase', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '12px', marginTop: 'auto' }}>
-                  {track.tech}
-                </div>
+              { index: '01', label: 'Targeted workshops', desc: 'Focused sessions on the tools and patterns each track depends on.' },
+              { index: '02', label: 'Mentor reviews', desc: 'Experienced engineers review architecture, scope, and trade-offs.' },
+              { index: '03', label: 'Design the architecture', desc: 'Feedback checkpoints converge into a buildable solution design.' },
+            ].map(item => (
+              <div className="stage-step" key={item.index}>
+                <span className="stage-index">{item.index}</span>
+                <h3>{item.label}</h3>
+                <p>{item.desc}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ===== VISION & MISSION ===== */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">Our Direction</span>
-            <h2>Vision &amp; Mission</h2>
-            <div className="title-rule"></div>
-          </div>
-          <div className="grid grid-2">
-            <div className="card reveal d1">
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
-                  <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
-                  <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
-                </svg>
-              </div>
-              <h3>Vision</h3>
-              <p>To be the definitive bridge between Sri Lanka&apos;s engineering academia and industry — producing graduates who don&apos;t just enter the workforce, but transform it.</p>
-            </div>
-            <div className="card reveal d2">
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                  <path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-                </svg>
-              </div>
-              <h3>Mission</h3>
-              <p>To deliver a structured, immersive programme that equips 3rd/4th-year students and fresh graduates with real industry exposure, professional mentorship, and hands-on problem-solving experience.</p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* ===== SOCIAL & COMMUNITY ===== */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      {/* ===== PHASE 04: UPCOMING ===== */}
+      <section className="section stage-section stage-section--04">
+        <div className="stage-backdrop" aria-hidden="true">
+          <Phase04Showcase />
+        </div>
+
+        <div className="stage-wash" aria-hidden="true" />
+
+        <div className="stage-scrim" aria-hidden="true" />
+
         <div className="container">
-          <div className="section-head center reveal">
-            <span className="eyebrow">Stay Connected</span>
-            <h2>Join Our Community</h2>
+          <div className="stage-copy">
+          <div className="stage-head reveal">
+            <span className="eyebrow">Upcoming Stage</span>
+            <h2>
+              <span className="stage-phase">Phase 04</span>
+              <span className="stage-title">Final Showcase</span>
+            </h2>
             <div className="title-rule"></div>
-            <p className="lead" style={{ marginTop: '20px', maxWidth: '600px', margin: '20px auto 0' }}>
-              Follow our official social media channels for direct announcements, behind-the-scenes content, and real-time updates.
+            <p className="lead">
+              The culmination of everything built so far. Completed solutions go on stage
+              in front of an industry panel, and what they are judged on is what they
+              have earned — recognition, awards, and the completion of the TransitionX
+              journey.
             </p>
           </div>
-          
-          <div className="grid grid-2" style={{ maxWidth: '960px', margin: '0 auto', gap: '20px' }}>
-            <div className="card reveal d1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
-              <a 
-                href="https://instagram.com/transitionx.official" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
-                className="hover-scale"
-              >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'var(--lavender)' }}>
-                  <InstagramIcon style={{ width: '28px', height: '28px' }} />
-                </div>
-              </a>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>Instagram</h3>
-              <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
-                Follow us on Instagram for live stories, highlights, and participant spotlights.
-              </p>
-              <a 
-                href="https://instagram.com/transitionx.official" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn-ghost"
-                style={{ fontSize: '0.95rem', padding: '10px 24px' }}
-              >
-                @transitionx.official
-              </a>
-            </div>
 
-            <div className="card reveal d2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
-              <a 
-                href="https://whatsapp.com/channel/0029VbCw8fD5fM5dbMtn8S19" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
-                className="hover-scale"
-              >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'var(--lavender)' }}>
-                  <WhatsAppIcon style={{ width: '28px', height: '28px' }} />
-                </div>
-              </a>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>WhatsApp Channel</h3>
-              <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
-                Join our official WhatsApp channel for direct alerts, schedule announcements, and links.
-              </p>
-              <a 
-                href="https://whatsapp.com/channel/0029VbCw8fD5fM5dbMtn8S19" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn-primary"
-                style={{ fontSize: '0.95rem', padding: '10px 24px' }}
-              >
-                Join Channel <span className="arrow">→</span>
-              </a>
-            </div>
+          <div className="stage-steps reveal d1">
+            {[
+              { index: '01', label: 'Final pitch', desc: 'Present the completed solution to the industry expert panel.' },
+              { index: '02', label: 'Evaluation', desc: 'Judged on technical depth, real-world impact, and delivery.' },
+              { index: '03', label: 'Recognition', desc: 'Awards, certificates, and the closing of the TransitionX journey.' },
+            ].map(item => (
+              <div className="stage-step" key={item.index}>
+                <span className="stage-index">{item.index}</span>
+                <h3>{item.label}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          </div>
 
-            <div className="card reveal d3" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
-              <a 
-                href="https://www.linkedin.com/company/ieee-student-branch-of-sliit/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
-                className="hover-scale"
-              >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'var(--lavender)' }}>
-                  <LinkedInIcon style={{ width: '28px', height: '28px' }} />
-                </div>
-              </a>
-              <h3>IEEE SB SLIIT LinkedIn</h3>
-              <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
-                Connect with the IEEE Student Branch of SLIIT for professional updates and networking.
-              </p>
-              <a 
-                href="https://www.linkedin.com/company/ieee-student-branch-of-sliit/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn-ghost"
-                style={{ fontSize: '0.95rem', padding: '10px 24px' }}
-              >
-                Connect on LinkedIn
-              </a>
-            </div>
-
-            <div className="card reveal d4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '32px' }}>
-              <a 
-                href="https://www.linkedin.com/company/ieee-student-branch-of-cuc/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
-                className="hover-scale"
-              >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', marginBottom: '16px', borderRadius: '14px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'var(--lavender)' }}>
-                  <LinkedInIcon style={{ width: '28px', height: '28px' }} />
-                </div>
-              </a>
-              <h3>IEEE SB CUC LinkedIn</h3>
-              <p style={{ fontSize: '0.95rem', color: 'var(--ink-soft)', marginBottom: '20px' }}>
-                Connect with the IEEE Student Branch of Curtin University Colombo for industry news.
-              </p>
-              <a 
-                href="https://www.linkedin.com/company/ieee-student-branch-of-cuc/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn-ghost"
-                style={{ fontSize: '0.95rem', padding: '10px 24px' }}
-              >
-                Connect on LinkedIn
-              </a>
-            </div>
+          <div className="stage-award" aria-hidden="true">
+            <Phase04Award />
           </div>
         </div>
       </section>

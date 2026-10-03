@@ -1,6 +1,6 @@
 import './globals.css'
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import './pages.css'
+import { Navbar, Footer } from "@/components/shared"
 import { Rajdhani } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 import Script from 'next/script'

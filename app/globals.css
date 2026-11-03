@@ -1615,12 +1615,12 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
 .brand-x-face {
   display: inline-block;
   transform: skewX(-6deg);
-  background: linear-gradient(135deg, #e056c1 0%, #22d3ee 50%, #ffffff 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: flowBrandColors 3s ease infinite;
+  /* Chrome can drop a nested background-clipped glyph when its parent is
+     composited for the 3D title. Keep the accent on a normal text paint
+     layer so the X remains visible in every rendering path. */
+  background: none;
+  color: #22d3ee;
+  -webkit-text-fill-color: currentColor;
   filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.95));
 }
 
@@ -4853,7 +4853,6 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
     align-items: center;
   }
 }
-
 
 
 

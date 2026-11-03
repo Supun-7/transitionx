@@ -36,12 +36,8 @@ export default function HeroOverlay() {
             className={`hero-brand-title-3d ${showTitle ? 'cinematic-in' : 'cinematic-out'}`}
             aria-label="TransitionX"
           >
-            <span className="text-3d-base">
-              Transition<span className="brand-x-base">X</span>
-            </span>
-            <span className="text-3d-face" aria-hidden="true">
-              Transition<span className="brand-x-face">X</span>
-            </span>
+            <span className="hero-brand-text">Transition</span>
+            <span className="hero-brand-x">X</span>
           </h1>
 
           {/* 2. What is TransitionX in one sentence */}
